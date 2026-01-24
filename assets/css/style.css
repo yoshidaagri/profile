@@ -770,6 +770,132 @@ ul {
     text-decoration: underline;
 }
 
+/* =========================
+   Seminar Page Styles
+   ========================= */
+.seminar-header {
+    background-color: var(--primary-color);
+}
+
+.seminar-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.seminar-step {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    border-left: 5px solid var(--accent-color);
+}
+
+.step-badge {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.seminar-step h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.step-desc {
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.step-details {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ba-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.ba-card h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.ba-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ba-item {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.ba-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.ba-item.before .ba-label { color: #888; }
+.ba-item.after .ba-label { color: var(--primary-color); }
+.ba-item.after { font-weight: 700; color: var(--primary-color); }
+
+.ba-arrow {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.message-section {
+    background-color: var(--white);
+    padding: 60px 20px;
+}
+
+.message-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    border: 1px dashed var(--primary-color);
+}
+
+.message-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--font-body); /* More readable */
+}
+
 /* Footer */
 footer {
     background-color: #1a2327;
