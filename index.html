@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="吉田中小企業診断士事務所 - IT/DX支援、建築改修、スタートアップ育成。自ら技術を扱う実践型コンサルティング。">
+    <title>吉田中小企業診断士事務所 | IT/DX・建築・スタートアップ支援</title>
+    <link rel="icon" href="./assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="./assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#ai-projects">AI Projects</a></li>
+                    <li><a href="#service">中小企業支援</a></li>
+                    <li><a href="#startup">創業・Startup</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li>
+                        <a href="https://github.com/yoshidaagri/profile" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub Repository">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-content">
+                <h1>自ら手を動かして技術を扱える<br>実践型 中小企業診断士</h1>
+                <p class="hero-sub">IT/DX × 建築改修 × スタートアップ支援<br>戦略と実装の両輪で、ビジネスの成長を加速させる。</p>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile-section">
+            <div class="container">
+                <h2 class="section-title">Profile <span class="en-title">(信頼の構築)</span></h2>
+                <div class="profile-content">
+                    <div class="profile-text">
+                        <h3>ITとリアルをつなぐ架け橋として</h3>
+                        <p>
+                            単なるアドバイザーにとどまらず、ITプロジェクトマネージャーとしての高度な知見と、建築改修分野への深い理解を併せ持つ診断士として活動しています。
+                            デジタル（IT/DX）とフィジカル（建築・現場）、そしてビジネス（経営）の3つの視点を統合し、北海道を拠点に企業の課題解決に伴走します。
+                        </p>
+                        <ul class="profile-list">
+                            <li><strong>専門性:</strong> ITプロジェクトマネジメント / 建築改修 / 経営診断</li>
+                            <li><strong>略歴 / 公職実績:</strong>
+                                <ul>
+                                    <li>中小企業診断士 登録（2017年〜）</li>
+                                    <li>経済産業省認定 経営革新等支援機関（2022年〜）</li>
+                                    <li>北海道大学工学部 非常勤講師（2022年〜）</li>
+                                    <li>一般社団法人 北海道中小企業診断士協会 理事（2024年〜）</li>
+                                </ul>
+                            </li>
+                            <li><strong>産学官連携:</strong> 
+                                <ul>
+                                    <li>学生アクセラレーションプログラム運営。大学オープンイノベーション講座講師</li>
+                                    <li>北海道大学「共同研究型インターンシップ」DXアドバイザー（2024年〜）</li>
+                                </ul>
+                            </li>
+                            <li><strong>中小企業支援 / 専門家登録:</strong>
+                                <ul>
+                                    <li>各種補助金申請支援（事業再構築、ものづくり、IT導入、持続化補助金等）</li>
+                                    <li>北海道庁「中小小規模企業経営安定化対策専門家派遣事業」専門家</li>
+                                    <li>苫小牧市「職場改善コンサルティング事業」専門家</li>
+                                </ul>
+                            </li>
+                            <li><strong>支援実務内容:</strong>
+                                <ul>
+                                    <li>補助金申請確認書発行、中小企業経営強化税制、創業支援指導員</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Wrapping Projects Section (New) -->
+        <section id="ai-projects" class="ai-projects-section">
+            <div class="container">
+                <h2 class="section-title">AI Wrapping Projects <span class="en-title">(開発実績・技術力)</span></h2>
+                <p class="section-lead">Google Apps Script (GAS) と Gemini API を活用した、ビジネスエンジニアリング教育分野向けの高度なAI支援ツール群。<br>「誰の」「どんな悩みを」解決するかを定義し、UXとプロンプトエンジニアリングで「使えるAI」を実装しています。</p>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-id">No.1.2</span>
+                            <h3>社会課題解決型ビジネス創出支援</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">100人規模の仮想ペルソナによる模擬アンケートで潜在ニーズを可視化。「Deep Inside分析」により、定量定性の両面からアイデアを検証。</p>
+                            <div class="tech-stack">
+                                <span>Gemini 2.5 Flash Lite</span>
+                                <span>並列処理</span>
+                                <span>ヒートマップ</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-id">No.3</span>
+                            <h3>壁打ちAI (Kabeuchi AI)</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">アドバイザー、評価者、統括などのマルチエージェントがユーザーと議論。著名起業家ペルソナによる「スペシャルゲスト」機能も搭載。</p>
+                            <div class="tech-stack">
+                                <span>Multi-Agent</span>
+                                <span>Interactive Prompting</span>
+                                <span>Gemini 3 Flash Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-id">No.4</span>
+                            <h3>StratOS - 戦略的事業アーキテクト</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">「Purpose」から「Combat」までの4層構造（PSTCモデル）で戦略を垂直統合。Google Docsへの自動出力機能を備えた戦略策定パートナー。</p>
+                            <div class="tech-stack">
+                                <span>Chain-of-Thought</span>
+                                <span>Google Docs Export</span>
+                                <span>Strategic Alignment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-id">No.5</span>
+                            <h3>Engineer QA Tool</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">技術課題に対しCTOやSRE専門ペルソナが助言。「意見モード」と「雑談モード」でモデルを使い分け、コストと精度を最適化。</p>
+                            <div class="tech-stack">
+                                <span>Tech Persona</span>
+                                <span>Model Optimization</span>
+                                <span>Security Review</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-id">No.6</span>
+                            <h3>若手社員用AIメンター</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">新入社員の悩みに応じて最適なペルソナセット（成長、イノベーション等）を提案。動的DOM操作によるリッチなUX。</p>
+                            <div class="tech-stack">
+                                <span>Dynamic UX</span>
+                                <span>Mentoring</span>
+                                <span>Gemini 2.5 Pro</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card highlight">
+                        <div class="project-header">
+                            <span class="project-id">No.7</span>
+                            <h3>座組生成AI (Zagumi AI)</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">ミッションから組織図、仮想取締役会レビューまでを一気通貫で生成。Google SheetsをヘッドレスCMSとして活用する堅牢なアーキテクチャ。</p>
+                            <div class="tech-stack">
+                                <span>Gemini 2.5 Pro</span>
+                                <span>Mermaid.js</span>
+                                <span>Headless CMS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section (SME Support) -->
+        <section id="service" class="service-section">
+            <div class="container">
+                <h2 class="section-title">中小企業支援 <span class="en-title">(Main Services)</span></h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">📑</div>
+                        <h3><a href="subsidy.html" class="card-link">補助金相談/申請支援</a></h3>
+                        <p>単なる申請代行ではありません。採択後の事業実施を見据え、事業計画そのものの「質」を高める支援を行います。</p>
+                        <a href="subsidy.html" class="read-more">詳しく見る &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🤖</div>
+                        <h3>AI / DX導入支援</h3>
+                        <p>GeminiやClaudeを活用した業務自動化や、SQL生成の効率化など、具体的かつ実戦的な技術導入をサポートします。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🎓</div>
+                        <h3>AI / DXセミナー</h3>
+                        <p>「難解な言葉を使わない」初心者向けの内容をパッケージ化。現場の社員様が使えるようになるまでの定着を支援します。</p>
+                    </div>
+                </div>
+
+                <!-- Case Studies -->
+                <div class="case-studies">
+                    <h3>地域に根ざした支援事例と採択実績 <span class="en-title">(Case Studies & Results)</span></h3>
+                    
+                    <div class="case-group">
+                        <h4>主要なコンサルティング支援事例</h4>
+                        <div class="case-list">
+                            <div class="case-item">
+                                <div class="case-header">
+                                    <span class="case-loc">石狩市</span>
+                                    <h4>中古車販売業</h4>
+                                </div>
+                                <p>スタッフ単位の売上-経費=粗利をシステムで見える化。定量的な管理会計の導入と人事評価制度の構築を支援。</p>
+                            </div>
+                            <div class="case-item">
+                                <div class="case-header">
+                                    <span class="case-loc">千歳市</span>
+                                    <h4>ペットフード製造業</h4>
+                                </div>
+                                <p>新市場開拓に向けた新店舗構築に伴走。原料調達ITプラットフォームの導入支援。</p>
+                            </div>
+                            <div class="case-item">
+                                <div class="case-header">
+                                    <span class="case-loc">札幌市</span>
+                                    <h4>士業事務所</h4>
+                                </div>
+                                <p>定型業務のRPA化と、生成AIを用いた労務関係業務の効率化支援。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsidy-results">
+                        <h4>補助金採択・事業再構築事例</h4>
+                        <div class="subsidy-table-wrapper">
+                            <table class="subsidy-table">
+                                <thead>
+                                    <tr>
+                                        <th>対象業種</th>
+                                        <th>新事業・展開内容</th>
+                                        <th>戦略的分類</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>中古車販売</td>
+                                        <td>EC販売・実店舗販売強化</td>
+                                        <td><span class="tag-sm">新市場開拓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>不動産業</td>
+                                        <td>美容サロン運営への進出</td>
+                                        <td><span class="tag-sm">事業転換</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>化粧品販売</td>
+                                        <td>オーダーメイドスキンケア開発</td>
+                                        <td><span class="tag-sm">新事業進出</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>建築業</td>
+                                        <td>プレハブ倉庫販売業の立ち上げ</td>
+                                        <td><span class="tag-sm">新事業進出</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>カレー店</td>
+                                        <td>オーベルジュ付きコテージ運営</td>
+                                        <td><span class="tag-sm">新市場開拓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>カフェ</td>
+                                        <td>コーヒー自家焙煎事業の強化</td>
+                                        <td><span class="tag-sm">上流工程進出</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="stats-disclaimer">※上記以外にも採択実績20件以上、数十万円から5000万円クラスまで幅広く対応しております。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Startup Section -->
+        <section id="startup" class="startup-section">
+            <div class="container">
+                <h2 class="section-title">創業 / スタートアップ支援 <span class="en-title">(Incubation)</span></h2>
+                <div class="startup-intro">
+                    <p>生成AIが昨今話題となり、中小企業においても活用方法、事例が求められております。小職は北海道大学オープンイノベーション公開講座で「生成AIプログラミング」を盛り込んだプログラミング教室講師を拝命しており、専門家としての知見を基に、地場の事業者様へ最新技術の実装支援が可能です。</p>
+                    <p>また地域社会の持続的発展、北海道Society 5.0の趣旨に沿った新規事業開発、スタートアップ支援を北海道大学「みらい創造ワークショップ」で3年間実施しております。これまでに<strong>4社の社会問題解決企業の起業</strong>を実現し、現在は<strong>2社の起業に向けた支援</strong>を継続中です。新規事業開発、事業計画の作成支援は私の最も得意とする領域です。</p>
+                </div>
+                
+                <div class="startup-steps">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <h4>新規事業開発・創業相談</h4>
+                        <p>アイデアをビジネスモデルに落とし込むフェーズを支援。Society 5.0を見据えた先進的な事業構想を具体化します。</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <h4>事業計画作成・伴走支援</h4>
+                        <p>資金調達や組織づくり、PM（プロジェクト管理）の視点から、起業前後の不確実なフェーズを強力にバックアップします。</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <h4>AI実装・技術支援</h4>
+                        <p>生成AIプログラミングの知見を活かし、スタートアップの武器となる独自ツールの開発や業務効率化を技術面から支援します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ <span class="en-title">(Contact)</span></h2>
+                <div class="contact-wrapper">
+                    <p>相談予約、セミナー登壇依頼、取材依頼などは以下の専用フォームより承ります。</p>
+                    
+                    <div class="contact-buttons">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor" class="btn btn-primary" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
