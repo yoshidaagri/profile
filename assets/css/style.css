@@ -951,21 +951,27 @@ ul {
 }
 
 .course-card.highlight {
-    border-color: var(--accent-color);
-    box-shadow: 0 4px 20px rgba(255, 183, 77, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
+.course-ume.highlight { border-color: #66bb6a; }
+.course-take.highlight { border-color: #42a5f5; }
+.course-matsu.highlight { border-color: var(--accent-color); }
 
 .course-recommend {
     position: absolute;
     top: -12px;
     right: 20px;
-    background: var(--accent-color);
-    color: var(--secondary-color);
     padding: 4px 16px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 700;
+    color: #fff;
 }
+
+.course-ume .course-recommend { background: #66bb6a; }
+.course-take .course-recommend { background: #42a5f5; }
+.course-matsu .course-recommend { background: var(--accent-color); color: var(--secondary-color); }
 
 .course-label {
     font-size: 0.85rem;
