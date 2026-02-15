@@ -896,6 +896,434 @@ ul {
     font-family: var(--font-body); /* More readable */
 }
 
+/* =========================
+   AI Education Page Styles
+   ========================= */
+.aiedu-header {
+    background: linear-gradient(135deg, #1a237e 0%, #004d40 100%);
+}
+
+.aiedu-badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.aiedu-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.aiedu-badge.accent {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+/* Course Cards Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 30px;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.course-card.highlight {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(255, 183, 77, 0.2);
+}
+
+.course-recommend {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.course-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    color: #888;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.course-target {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.course-price {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-amount small {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.price-note {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.course-features {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.course-features li {
+    list-style: disc;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.course-outcome {
+    background: #f0f8f0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.btn-course {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-course:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.course-ume { border-top: 5px solid #66bb6a; }
+.course-take { border-top: 5px solid #42a5f5; }
+.course-matsu { border-top: 5px solid var(--accent-color); }
+
+/* Comparison Table */
+.aiedu-table .col-ume { background: rgba(102, 187, 106, 0.05); }
+.aiedu-table .col-take { background: rgba(66, 165, 245, 0.05); }
+.aiedu-table .col-matsu { background: rgba(255, 183, 77, 0.08); }
+
+/* Day Structure */
+.day-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.day-block {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+}
+
+.day-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.day-header h3 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.day-header.day1 { background: var(--secondary-color); }
+.day-header.day2 { background: var(--primary-color); }
+
+.day-tag {
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.day-body {
+    padding: 25px 30px;
+}
+
+.session-item {
+    display: flex;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+}
+
+.session-item:last-child { border-bottom: none; }
+
+.session-num {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+.session-item h4 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.session-item p {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Day 2 Course Tabs */
+.day2-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.day2-course {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ccc;
+}
+
+.day2-course h4 {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.course-badge.ume { background: #66bb6a; }
+.course-badge.take { background: #42a5f5; }
+.course-badge.matsu { background: var(--accent-color); color: var(--secondary-color); }
+
+.session-list {
+    padding-left: 20px;
+}
+
+.session-list li {
+    list-style: decimal;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.session-list li strong {
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+/* Dojo Section */
+.dojo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.dojo-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.dojo-card.white-belt { border-top: 5px solid #66bb6a; }
+.dojo-card.black-belt { border-top: 5px solid #263238; }
+
+.dojo-icon {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.white-belt .dojo-icon {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.black-belt .dojo-icon {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.dojo-card h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+}
+
+.dojo-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.dojo-card ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.dojo-card ul li {
+    list-style: disc;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.dojo-target {
+    display: flex;
+    gap: 8px;
+}
+
+/* Subsidy Info */
+.subsidy-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subsidy-highlight {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.subsidy-highlight p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.subsidy-flow {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Step Up Flow */
+.stepup-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.stepup-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stepup-desc {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.stepup-arrow {
+    font-size: 1.5rem;
+    color: #ccc;
+    font-weight: 700;
+}
+
+.stepup-goal {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Nav active state */
+.nav-active {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+}
+
 /* Footer */
 footer {
     background-color: #1a2327;
