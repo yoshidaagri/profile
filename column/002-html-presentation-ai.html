@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIを使ってHTMLでプレゼン資料を作成する方法を解説。PowerPointとの比較、半日で45枚完成の実例、中小企業での活用シーンを紹介します。">
+    <title>パワポはもう不要？AIで作るHTMLプレゼンの実力 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-02-16">2026.02.16</time>
+                </div>
+                <h1>パワポはもう不要？AIで作るHTMLプレゼンの実力</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+
+            <h2>はじめに — 除雪の合間に45枚</h2>
+            <p>
+                2月のある休日、北海道は大雪でした。朝から除雪に追われつつ、合間に大学の講義スライドを作らなければいけない。締め切りは翌週。PowerPointで45枚のスライドを一から作るとなると、普通に3〜4日はかかります。
+            </p>
+            <p>
+                「無理だな」と思いながら、ふと試してみたのが<strong>AIにHTMLでプレゼンを作らせる</strong>という方法でした。結果、除雪の合間の<strong>半日で45枚が完成</strong>。しかも休憩タイマーや画像クリック拡大といった、パワポでは面倒な機能まで付いている。
+            </p>
+            <p>
+                正直、自分でも「これはちょっとヤバいぞ」と思いました。パワポで数日かかる作業が半日で終わってしまう。しかも品質は同等かそれ以上。この体験を共有したくて、この記事を書いています。
+            </p>
+
+            <h2>なぜHTMLプレゼンなのか</h2>
+            <p>
+                まず、PowerPointの「限界」について考えてみましょう。PowerPointは優れたツールですが、いくつかの構造的な問題を抱えています。
+            </p>
+
+            <h3>PowerPointの限界</h3>
+            <ul>
+                <li><strong>ファイルが重い</strong> — 画像やアニメーションを入れると、すぐに数十MBから数百MBになる。メール添付の上限に引っかかることも日常茶飯事</li>
+                <li><strong>環境依存</strong> — WindowsとMacでフォントが変わる、バージョンによってレイアウトが崩れる、そもそもPowerPointを持っていない人には見せられない</li>
+                <li><strong>バージョン管理の難しさ</strong> — 「最終版」「最終版_v2」「最終版_v2_修正済み」というファイル名地獄。誰がいつ何を変えたのか追跡困難</li>
+                <li><strong>共同編集の制約</strong> — Microsoft 365で共同編集は可能だが、同時に同じスライドを触ると競合が発生しやすい</li>
+            </ul>
+
+            <h3>HTMLプレゼンの利点</h3>
+            <p>
+                一方、HTMLで作成したプレゼン資料には、以下のような利点があります。
+            </p>
+            <ul>
+                <li><strong>ブラウザだけで閲覧可能</strong> — Chrome、Safari、Edge、スマートフォン、タブレット。インターネット接続さえあれば、専用ソフト不要で誰でも見られる</li>
+                <li><strong>軽量</strong> — テキストベースなので、45枚のスライドでも数百KB程度。メール添付も、通信速度が遅い環境でも問題なし</li>
+                <li><strong>インタラクティブ</strong> — ホバーエフェクト、アコーディオン、タブ切り替えなど、PowerPointでは難しいインタラクションを自然に組み込める</li>
+                <li><strong>バージョン管理</strong> — Gitで管理すれば、誰がいつ何行目を変えたか完全に追跡可能。過去の任意の時点に戻すことも一瞬</li>
+                <li><strong>無料ホスティング</strong> — GitHub Pagesなどを使えば、無料でインターネット上に公開可能。URLを共有するだけ</li>
+            </ul>
+            <p>
+                もちろん、すべてのプレゼンをHTMLにすべきという話ではありません。しかし、「社内研修資料」「セミナー資料」「技術説明資料」など、更新頻度が高く多人数に共有する資料については、HTMLプレゼンが圧倒的に優れています。
+            </p>
+
+            <h2>AIに作らせるとどうなるか</h2>
+            <p>
+                HTMLプレゼンの最大の障壁は、「HTMLやCSSの知識がないと作れないのでは？」という点でしょう。答えは<strong>NO</strong>です。AIが書いてくれます。
+            </p>
+
+            <h3>データとエンジンの分離設計</h3>
+            <p>
+                私が採用しているのは、<strong>「データとエンジンの分離」</strong>という設計思想です。具体的には、プレゼンの内容（テキスト、構造、順番）をJSONやMarkdownなどのデータファイルに記述し、それを表示するHTML/CSS/JavaScriptのエンジン部分を別に用意します。
+            </p>
+            <p>
+                この設計の何がいいかというと、<strong>内容の修正がデータファイルの編集だけで完結する</strong>ことです。HTMLやCSSに触る必要がありません。新しいスライドを追加したければ、JSONファイルにオブジェクトを1つ追加するだけ。順番を入れ替えたければ、配列の順序を変えるだけです。
+            </p>
+
+            <h3>半日で45枚完成の流れ</h3>
+            <p>
+                実際に半日で45枚のスライドを完成させた流れを、5つのステップでご紹介します。
+            </p>
+            <ol>
+                <li><strong>構成案の作成（30分）</strong> — AIに「このテーマでプレゼンの構成案を作って」と依頼。章立てと各スライドの概要が出力される</li>
+                <li><strong>データファイルの生成（1時間）</strong> — 構成案をもとに、AIがJSONデータファイルを自動生成。各スライドのタイトル、本文、箇条書き、注釈がすべて構造化される</li>
+                <li><strong>エンジンの構築（1時間）</strong> — HTML/CSS/JavaScriptのプレゼンエンジンをAIが生成。レスポンシブ対応、キーボード操作、プログレスバーなどの機能も含む</li>
+                <li><strong>内容の精査と修正（1時間）</strong> — 人間がデータファイルを確認し、表現の微調整や事実確認を行う。この工程が品質を決める最も重要なステップ</li>
+                <li><strong>デザイン調整と仕上げ（30分）</strong> — 配色、フォントサイズ、余白などの視覚的な微調整。AIにCSSの修正を依頼</li>
+            </ol>
+            <p>
+                合計で約4時間。PowerPointで同じ品質のスライドを45枚作る場合、デザインの調整、図版の配置、アニメーションの設定などを考えると<strong>3〜4日は必要</strong>です。AIとHTMLの組み合わせで、制作時間を1/5以下に短縮できたことになります。
+            </p>
+
+            <h2>中小企業での活用シーン</h2>
+            <p>
+                「HTMLプレゼンなんて、IT企業の話でしょ？」と思うかもしれません。しかし、中小企業にこそ大きなメリットがあります。
+            </p>
+
+            <h3>社内研修資料</h3>
+            <p>
+                社内研修は、同じ資料を何度も使い回し、少しずつ内容を更新していくものです。PowerPointファイルを更新するたびにバージョン管理が混乱しますが、HTMLなら簡単です。社内サーバーやクラウドにホスティングすれば、従業員はURLにアクセスするだけで常に最新の研修資料を閲覧できます。
+            </p>
+            <p>
+                さらに、HTMLならスマートフォンでも快適に閲覧できるため、現場作業の合間にスマホで研修内容を復習する、といった使い方も自然にできます。
+            </p>
+
+            <h3>営業プレゼン</h3>
+            <p>
+                取引先にプレゼンする際、URLを送るだけでOKです。相手がPowerPointを持っているかどうかを心配する必要がありません。タブレットでもスマートフォンでもPCでも、同じURLで同じ見た目のプレゼンが表示されます。
+            </p>
+            <p>
+                また、取引先ごとにデータファイルを少しカスタマイズするだけで、パーソナライズされた提案資料を量産することも可能です。AIに「A社向けにこの3つのポイントを強調して」と指示するだけで、専用のデータファイルが生成されます。
+            </p>
+
+            <h3>会社説明会</h3>
+            <p>
+                採用活動の会社説明会資料も、HTMLプレゼンとの相性が良い用途です。自社サイトに常設しておけば、説明会に参加できなかった学生にもURLを共有するだけで見てもらえます。また、会場でプロジェクターに投影する場合も、ブラウザを全画面表示にするだけなので、PowerPointのインストールやバージョン問題に悩まされることがありません。
+            </p>
+
+            <h2>注意点</h2>
+            <p>
+                もちろん、HTMLプレゼンがすべての場面で最適というわけではありません。以下の点には注意が必要です。
+            </p>
+            <ul>
+                <li><strong>社外への正式提出物はPowerPointが必要な場合がある</strong> — 行政への提出書類や、取引先が「PowerPoint形式での提出」を指定している場合は、従来通りPowerPointで作成する必要があります。ただし、この場合もまずHTMLで内容を作成し、最後にPowerPointに変換するという手順が効率的です</li>
+                <li><strong>チームの習熟度を考慮する</strong> — HTMLやJSON、Gitに馴染みのないメンバーが多い場合、導入初期の学習コストが発生します。まずは1つのプロジェクトで試験的に導入し、成功体験を積んでから展開するのが賢明です</li>
+                <li><strong>デザイン重視の場合はPowerPointの方が向いていることもある</strong> — グラフィックデザイナーが作り込んだビジュアル中心のプレゼンは、PowerPointやKeynoteの方が効率的な場合があります。HTMLプレゼンは、テキストと構造化データ中心のプレゼンに最も向いています</li>
+            </ul>
+            <p>
+                大切なのは、「PowerPoint vs HTML」という二項対立ではなく、<strong>目的と状況に応じて最適なツールを選ぶ</strong>ことです。社内向け・更新頻度が高い・多デバイス対応が必要、という条件が揃えば、HTMLプレゼンが最良の選択肢になります。
+            </p>
+
+            <h2>まとめ — パワポに戻れなくなった話</h2>
+            <p>
+                あの大雪の日以来、私はほとんどのプレゼン資料をHTMLで作るようになりました。パワポを開くのは、取引先から「PowerPoint形式で」と指定されたときくらいです。
+            </p>
+            <p>
+                一番大きいのは、<strong>「内容に集中できる」</strong>ということ。パワポだと、フォントサイズを揃えたり、図形の位置を微調整したり、アニメーションの順番を設定したりと、内容以外のことに時間を取られがちです。HTMLプレゼンなら、内容（データ）だけ書けば、見た目はAIとCSSが勝手に整えてくれる。
+            </p>
+            <p>
+                もちろん、これが唯一の正解というわけではありません。でも、「プレゼン資料を作るのに丸2日かかっている」という方には、騙されたと思って一度試してほしい。きっと世界が変わります。
+            </p>
+
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AI/DXセミナーのご案内</h3>
+            <p>AIを活用した業務効率化の具体的な手法を、ハンズオン形式で学べるセミナーを開催しています。<br>HTMLプレゼン制作の実演も行います。</p>
+            <a href="../seminar.html" class="btn btn-primary">セミナー詳細を見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="001-ai-multi-persona-qa.html" class="column-nav-prev">&larr; 前の記事: AIに「19人の専門家」を演じさせて品質管理する方法</a>
+            <a href="003-ai-training-shochikubai.html" class="column-nav-next">次の記事: 中小企業のAI研修、松竹梅3段階で始めるリスキリング &rarr;</a>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

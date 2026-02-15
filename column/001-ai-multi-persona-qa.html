@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIに複数の専門家の役割を演じさせて品質チェックを行う「マルチペルソナ方式」を解説。中小企業でもすぐに使える実践的なプロンプト例も紹介します。">
+    <title>AIに「19人の専門家」を演じさせて品質管理する方法 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-02-16">2026.02.16</time>
+                </div>
+                <h1>AIに「19人の専門家」を演じさせて品質管理する方法</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+
+            <h2>はじめに — ある開発現場での気づき</h2>
+            <p>
+                先日、あるシステム開発プロジェクトで設計書のレビューをしていたときのことです。レビュー担当者が一人で100ページ超の設計書を見ているのですが、正直なところ、途中から目が滑っているのが分かりました。無理もありません。人間が一人で、機能仕様・データ設計・セキュリティ・品質基準を同時にチェックするのは、そもそも無茶な話なのです。
+            </p>
+            <p>
+                そこで私が試したのが、<strong>「マルチペルソナ方式」</strong>という少し変わったAI活用法です。要は、AIに「機能定義の専門家」「セキュリティの専門家」「品質管理の専門家」など、複数の役割を順番に演じさせて、それぞれの視点でチェックさせるというもの。
+            </p>
+            <p>
+                最初は「そんなうまくいくのか？」と半信半疑でしたが、やってみたら想像以上の結果でした。この記事では、実際にどうやったか、そして中小企業の日常業務にどう応用できるかをお話しします。
+            </p>
+
+            <h2>マルチペルソナ方式とは</h2>
+            <p>
+                マルチペルソナ方式とは、AIに<strong>複数の専門家の役割を順番に演じさせ</strong>、それぞれの専門的な視点からレビューやチェックを行わせる手法です。一人のAIが「なんでも屋」として漠然とチェックするのではなく、明確な役割と評価基準を持った専門家として振る舞わせることで、チェックの精度と網羅性が格段に向上します。
+            </p>
+            <p>
+                例えば、あるシステム開発プロジェクトでは、以下の4つの専門家ペルソナを設定しました。
+            </p>
+            <ul>
+                <li><strong>機能定義の専門家</strong> — 要件が正しく定義されているか、仕様の抜け漏れがないかをチェック</li>
+                <li><strong>データ設計の専門家</strong> — データベース設計の正規化、リレーション、データ整合性を検証</li>
+                <li><strong>品質管理の専門家</strong> — テスト観点、エラーハンドリング、異常系の考慮を評価</li>
+                <li><strong>セキュリティの専門家</strong> — 認証・認可、入力値検証、情報漏洩リスクを精査</li>
+            </ul>
+            <p>
+                それぞれの専門家には、具体的なチェック項目と評価基準を与えます。AIはその役割に「なりきって」レビューを行い、OK/NG/確認不可の3段階で判定し、NGの場合は改善提案まで出力します。
+            </p>
+            <p>
+                重要なのは、各ペルソナに<strong>明確な評価基準と出力フォーマット</strong>を指定することです。「なんとなくチェックして」ではなく、「以下の10項目について、それぞれOK/NG/確認不可で判定し、NGの場合は理由と改善案を記載せよ」と具体的に指示することで、再現性のある品質チェックが可能になります。
+            </p>
+
+            <h2>実際にやってみた結果 — 予想外の発見</h2>
+            <p>
+                先日、実際にこの方式で設計書をチェックしてみました。10種類の専門家ペルソナに、合計110のチェック項目を割り振って実行した結果がこちらです。
+            </p>
+            <blockquote>
+                チェック項目数：110項目<br>
+                OK：62件<br>
+                NG：31件（31.6%）<br>
+                確認不可：5件
+            </blockquote>
+            <p>
+                正直、NG率31.6%という数字にはちょっと衝撃を受けました。人間のレビューでは「概ね良好」と判断されていた設計書から、これだけの改善点が出てきたわけです。
+            </p>
+            <p>
+                でも、もっと驚いたのはその先でした。NG 31件を並べてみると、<strong>42%にあたる13件が実は同じ根本原因</strong>だったのです。あるクラスの設計が未完成で、それがデータ設計、品質管理、セキュリティと、別々のペルソナから繰り返し指摘されていた。
+            </p>
+            <p>
+                一人のレビュアーなら「ここ、エラー処理がないな」と1件として数えて終わりです。でも10人の専門家が別々の角度から見たことで、「これは個別の問題じゃなくて、構造的な設計漏れだ」ということが浮き彫りになった。根本原因を1つ直すだけで、13件のNGが一括で消える。これは人間だけのレビューではなかなか得られない気づきでした。
+            </p>
+
+            <h2>中小企業での応用例</h2>
+            <p>
+                マルチペルソナ方式は、システム開発に限った話ではありません。中小企業の日常業務でも、すぐに応用できる場面がたくさんあります。以下に3つの具体例をご紹介します。
+            </p>
+
+            <h3>1. 営業提案書のチェック</h3>
+            <p>
+                営業担当者が作成した提案書を、以下の3つのペルソナでチェックします。
+            </p>
+            <ul>
+                <li><strong>価格戦略の専門家</strong> — 価格設定の妥当性、競合比較、利益率の確保を検証</li>
+                <li><strong>法務の専門家</strong> — 契約条件のリスク、免責事項の記載、法的な問題点をチェック</li>
+                <li><strong>顧客目線の専門家</strong> — 顧客にとっての分かりやすさ、メリットの伝わりやすさ、不安要素の有無を評価</li>
+            </ul>
+            <p>
+                営業担当者は「売りたい」気持ちが先行するため、価格の根拠が弱かったり、リスクの記載が不十分だったりすることがあります。3つの視点で自動チェックすることで、提出前に品質を底上げできます。
+            </p>
+
+            <h3>2. 求人原稿のチェック</h3>
+            <p>
+                採用担当者が作成した求人原稿を、以下の3つのペルソナでチェックします。
+            </p>
+            <ul>
+                <li><strong>労働法の専門家</strong> — 労働基準法、男女雇用機会均等法、年齢制限などの法令遵守を確認</li>
+                <li><strong>求職者目線の専門家</strong> — 仕事内容の具体性、待遇の明確さ、応募しやすさを評価</li>
+                <li><strong>公平性の専門家</strong> — 性別・年齢・国籍等による差別的表現がないか、包括的な表現になっているかを精査</li>
+            </ul>
+            <p>
+                求人原稿は法的なリスクが高い文書の一つです。うっかり年齢制限を匂わせる表現を使ってしまったり、性別を限定するような記載をしてしまうケースは少なくありません。AIに3つの視点で事前チェックさせることで、法的リスクを大幅に軽減できます。
+            </p>
+
+            <h3>3. 社内マニュアルのチェック</h3>
+            <p>
+                作成した業務マニュアルを、以下の3つのペルソナでチェックします。
+            </p>
+            <ul>
+                <li><strong>新入社員の視点</strong> — 専門用語が説明なしに使われていないか、手順が具体的か、迷うポイントがないかを評価</li>
+                <li><strong>安全管理の専門家</strong> — 安全上の注意事項が十分に記載されているか、危険な作業手順がないかを確認</li>
+                <li><strong>効率化の専門家</strong> — 無駄な手順がないか、自動化できるステップはないか、改善の余地を提案</li>
+            </ul>
+            <p>
+                ベテラン社員が作成したマニュアルは、暗黙知が多く含まれがちです。「新入社員の視点」というペルソナを入れることで、「この手順、前提知識がないと分からない」「この用語、説明がない」といった指摘が自動で上がってきます。
+            </p>
+
+            <h2>すぐに試せるプロンプト例</h2>
+            <p>
+                以下に、マルチペルソナ方式を試すためのプロンプトテンプレートを示します。お手元のAIツール（ChatGPT、Gemini、Claudeなど）にそのまま貼り付けて使えます。
+            </p>
+            <pre style="background: #f5f5f5; padding: 25px; border-radius: 8px; overflow-x: auto; font-family: 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.6; border-left: 4px solid #ffb74d; margin: 20px 0;"><code># マルチペルソナ品質チェック
+
+## あなたの役割
+以下の3人の専門家を順番に演じて、
+提示された文書をレビューしてください。
+
+## ペルソナ1: [専門家の役割名]
+- 視点: [何を重視してチェックするか]
+- チェック項目:
+  1. [具体的なチェック項目1]
+  2. [具体的なチェック項目2]
+  3. [具体的なチェック項目3]
+
+## ペルソナ2: [専門家の役割名]
+- 視点: [何を重視してチェックするか]
+- チェック項目:
+  1. [具体的なチェック項目1]
+  2. [具体的なチェック項目2]
+  3. [具体的なチェック項目3]
+
+## ペルソナ3: [専門家の役割名]
+- 視点: [何を重視してチェックするか]
+- チェック項目:
+  1. [具体的なチェック項目1]
+  2. [具体的なチェック項目2]
+  3. [具体的なチェック項目3]
+
+## 出力フォーマット
+各ペルソナごとに、以下の形式で出力してください。
+
+| # | チェック項目 | 判定 | 理由・改善案 |
+|---|------------|------|------------|
+| 1 | ...        | OK/NG | ...       |
+
+## 最後に
+全ペルソナのNG項目を集約し、
+根本原因が共通するものをグループ化してください。
+
+---
+## チェック対象の文書
+（ここに文書を貼り付けてください）</code></pre>
+            <p>
+                まずは自分の業務に合わせて、3つのペルソナとチェック項目をカスタマイズしてみてください。ペルソナの設定が具体的であればあるほど、AIの出力も的確になります。
+            </p>
+
+            <h2>まとめ — まずは3人の専門家から</h2>
+            <p>
+                タイトルには「19人の専門家」と書きましたが、いきなり19人も設定する必要はありません。私も最初は3〜4人から始めました。
+            </p>
+            <p>
+                コツは、AIに「なんとなくチェックして」と投げないこと。<strong>「あなたは○○の専門家です。以下の項目についてOK/NGで判定してください」</strong>と明確に役割と基準を与えること。これだけで、AIの出力の質がまるで違ってきます。
+            </p>
+            <p>
+                明日の朝、まずは自分が最近書いた提案書やメールを題材に、「顧客目線」「上司目線」「法務目線」の3人でチェックしてみてください。5分で終わりますし、きっと「あ、これ気づかなかった」という発見があるはずです。
+            </p>
+
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AI/DX導入支援のご案内</h3>
+            <p>マルチペルソナ方式をはじめ、AIを活用した業務改善の導入をサポートしています。<br>御社の課題に合わせた具体的な活用プランをご提案します。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                class="btn btn-primary" target="_blank" rel="noopener noreferrer">お問い合わせはこちら</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <span></span>
+            <a href="002-html-presentation-ai.html" class="column-nav-next">次の記事: パワポはもう不要？AIで作るHTMLプレゼンの実力 &rarr;</a>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
