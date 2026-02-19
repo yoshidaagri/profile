@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全文検索ツールにファイル名検索とExcelハイパーリンク出力を追加。「あのファイルどこいったっけ？」を解決する、ちょっとした改善が業務の生産性を変える実例を紹介します。">
+    <title>「あのファイルどこいったっけ？」を解決する全文検索ツール改善記 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-02-19">2026.02.19</time>
+                </div>
+                <h1>「あのファイルどこいったっけ？」を解決する全文検索ツール改善記</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+
+            <h2>はじめに — 「あのファイル、どこいったっけ？」</h2>
+            <p>
+                「あのファイル、どこいったっけ？」——職場でこのセリフ、一日に何回聞くでしょうか。
+            </p>
+            <p>
+                先日、ある企業の担当者の方と話していたとき、まさにこの話題になりました。共有フォルダに何年分もの資料が溜まっていて、「確かこの前の見積書に似たような案件があったはず……」と思っても、フォルダを一つ一つ開いて探すしかない。Windowsの検索はファイル名しか引っかからないし、中身まで調べるには時間がかかりすぎる。
+            </p>
+            <p>
+                そこで私が以前作ったのが、ブラウザ上で動く<strong>全文検索ツール</strong>です。フォルダを選択するとExcel、PDF、テキストファイル——何でも中身を読んで、キーワードにヒットした行を一覧表示してくれます。HTMLとJavaScriptだけで動くシンプルなものですが、これだけで「中身に何が書いてあるか」で資料を探せるようになりました。
+            </p>
+            <p>
+                ところがしばらく使ってもらったところ、こんな声が出てきました。
+            </p>
+            <blockquote>
+                「中身で検索できるのはありがたいけど、ファイル名でもサッと探せたらもっと便利なんだけどなぁ」
+            </blockquote>
+            <p>
+                なるほど、確かにそうです。「あのファイルどこいったっけ？」のうち半分くらいは、<strong>ファイル名の一部は覚えているけどフォルダの場所がわからない</strong>というケースではないでしょうか。
+            </p>
+
+            <h2>改善その1: ファイル名検索の追加</h2>
+            <p>
+                もともとの全文検索ツールは「ファイルの中身」をキーワードで検索するものでした。これに加えて、<strong>「ファイル名」でも検索できるモード</strong>を追加しました。
+            </p>
+            <p>
+                使い方はシンプルです。検索ボックスの横に「ファイル名で検索」ボタンを一つ追加しただけ。ファイル名の一部——たとえば「見積」「2025」「報告書」——を入力すれば、フォルダ内のすべてのファイルから名前がマッチするものを瞬時にリストアップしてくれます。
+            </p>
+            <p>
+                全文検索はファイルの中身を読み込むため少し時間がかかりますが、ファイル名検索はファイルを開かずに名前だけで判定するので<strong>非常に高速</strong>。数百ファイルあるフォルダでも一瞬で結果が出ます。
+            </p>
+            <p>
+                この2つのモードが揃ったことで、ユーザーは状況に応じて使い分けられるようになりました。
+            </p>
+
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 15px 20px; text-align: left; border-bottom: 2px solid #ddd; color: #263238;">こんなとき</th>
+                            <th style="padding: 15px 20px; text-align: left; border-bottom: 2px solid #ddd; color: #263238;">使うモード</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;">ファイル名は覚えているけど場所がわからない</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;"><strong>ファイル名検索</strong>（高速）</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;">中身に「○○」と書いてあるファイルを探したい</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;"><strong>全文検索</strong>（網羅的）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>改善その2: Excelを「橋渡し役」にする</h2>
+            <p>
+                ファイル名検索が加わって便利になったのですが、もう一つ課題がありました。<strong>検索結果からファイルを直接開けない</strong>のです。
+            </p>
+            <p>
+                これはツールのバグではなく、<strong>ブラウザのセキュリティ仕様</strong>です。Webブラウザは悪意のあるサイトからパソコン内のファイルを守るために、<code>file:///</code>（ローカルファイルへのリンク）をクリックで開けないようにしています。もしクリック一つでパソコン内のファイルが開けてしまったら、大きなセキュリティリスクですから、これは当然の仕組みです。
+            </p>
+            <p>
+                でも、せっかく目的のファイルを見つけたのに、そこからエクスプローラーを開いてフォルダをたどって……では検索の意味が半減します。
+            </p>
+            <p>
+                そこで見つけた解決策が、<strong>Excelファイルに検索結果を書き出して、ファイル名にハイパーリンクを付ける</strong>という方法でした。Excelのハイパーリンクはブラウザとは違い、<code>file:///</code>プロトコルでローカルファイルを問題なく開けます。つまり、<strong>Excelを経由すればワンクリックでファイルが開ける</strong>のです。
+            </p>
+
+            <h3>仕組みの概要</h3>
+            <ol>
+                <li><strong>検索結果をExcelに出力</strong> — ファイル名、パス、ヒット箇所、内容を列に整理</li>
+                <li><strong>ファイル名にハイパーリンクを設定</strong> — <code>file:///C:/...</code> 形式で絶対パスを埋め込む</li>
+                <li><strong>Excelからワンクリックでファイルを開ける</strong></li>
+            </ol>
+
+            <h3>一つだけ越えたハードル</h3>
+            <p>
+                実装で一つだけ技術的な課題がありました。ブラウザのFile API（ファイルを読み込む仕組み）は、セキュリティ上の理由で<strong>ファイルの絶対パスを返してくれない</strong>のです。Excelのハイパーリンクには絶対パスが必要なのに、取得できるのは <code>共有フォルダ/営業/見積書.xlsx</code> のような相対パスだけ。
+            </p>
+            <p>
+                そこで採用したのが、<strong>「フォルダの完全パスを1回だけ入力してもらう」</strong>方式です。フォルダを選択した後に、エクスプローラーのアドレスバーからパスをコピー＆ペーストしてもらう。あとはツール側で相対パスと結合して、自動的に絶対パスを生成します。
+            </p>
+            <p>
+                1回だけ手作業が発生しますが、その後は何十件、何百件の検索結果すべてにワンクリックでアクセスできる。十分なトレードオフではないでしょうか。
+            </p>
+
+            <h2>2つの改善がもたらした変化</h2>
+            <p>
+                ファイル名検索とExcelリンク出力——どちらも技術的にはそれほど大がかりなものではありません。追加したコードも数十行程度です。しかし、<strong>ユーザーの作業フローへのインパクトは想像以上</strong>でした。
+            </p>
+
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 15px 20px; text-align: left; border-bottom: 2px solid #ddd; color: #263238;"></th>
+                            <th style="padding: 15px 20px; text-align: left; border-bottom: 2px solid #ddd; color: #263238;">作業の流れ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;"><strong>以前</strong></td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;">「あのファイルどこだっけ？」 → フォルダを一つずつ開く → 見つからない → 諦める or 同僚に聞く</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;"><strong>全文検索<br>導入後</strong></td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;">キーワードで検索 → 見つかる → でもファイルの場所をメモしてエクスプローラーで探す</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;"><strong>今回の<br>改善後</strong></td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid #eee;">ファイル名 or 中身で検索 → Excel保存 → クリックで即開く</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                特に、検索結果が10件、20件とある場合の作業効率は劇的に向上します。一覧をExcelで手元に残せるので、「後で見返したい」というニーズにも対応できるようになりました。
+            </p>
+
+            <h2>まとめ — 「あと一歩」の改善を積み重ねる</h2>
+            <p>
+                冒頭の担当者の方にこの改善を見せたところ、「これこれ、これが欲しかったんです！」と喜んでいただけました。「あのファイルどこいったっけ？」と思ってから目的のファイルを開くまで、もうフォルダをたどる必要はありません。
+            </p>
+            <p>
+                業務改善の世界では、「80%の機能より、最後の20%の使い勝手」が満足度を大きく左右することがあります。全文検索という機能自体は完成していても、<strong>「名前でサッと探す」「見つけたファイルをすぐ開く」</strong>という最後のアクションがスムーズでなければ、ユーザーは不便を感じ続けます。
+            </p>
+            <p>
+                今回の教訓をまとめると:
+            </p>
+            <ol>
+                <li><strong>ユーザーの声を聞いて機能を拡張する</strong> — 「名前でも探したい」という素朴なニーズを見逃さない</li>
+                <li><strong>制約は「仕様」であって「バグ」ではない</strong> — ブラウザの制限を理解した上で、別の経路（Excel）で解決する</li>
+                <li><strong>作業フロー全体を見る</strong> — 「検索できる」だけでなく「検索結果を使って次のアクションに移れるか」まで考える</li>
+            </ol>
+            <p>
+                社内ツールの改善は、大規模なシステム導入と違って、こうした「ちょっとした工夫」の積み重ねです。皆さんの職場にも、「あと一歩」で便利になるツールが眠っているかもしれません。
+            </p>
+
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AI講座プログラムの詳細</h3>
+            <p>AIやDXを活用した業務改善・社内ツール開発に興味のある方へ。<br>実践型のAI講座で、御社の業務に合った活用法を体験いただけます。</p>
+            <a href="../aieducation.html" class="btn btn-primary">AI講座プログラムを見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="004-ai-quality-management.html" class="column-nav-prev">&larr; 前の記事: 品質管理におけるAIの活用</a>
+            <span></span>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
