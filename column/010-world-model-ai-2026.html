@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChatGPTは「ガラスのグラスが落ちたら割れる」ことを本質的に理解していない。この限界を超える「世界モデル」に10億ドル超の投資が集中。LeCun、Fei-Fei Li、DeepMindが挑む2026年の大競争を解説。">
+    <title>AIは「重力」を知らない ── 10億ドルが動く「世界モデル」が変える未来 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Subsidy Banner -->
+    <div class="subsidy-banner">
+        <span class="banner-new">NEW</span>
+        <a href="../subsidy-list.html">北海道で現在募集中の補助金情報をまとめました &rarr;</a>
+    </div>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-03-21">2026.03.21</time>
+                </div>
+                <h1>AIは「重力」を知らない ── 10億ドルが動く「世界モデル」が変える未来</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+
+            <h2>はじめに ── テーブルの端にガラスのグラスを置いたら？</h2>
+            <p>
+                テーブルの端にガラスのグラスを置いたらどうなるか。人間なら幼児でもわかります。「落ちたら割れる。危ない。」
+            </p>
+            <p>
+                ChatGPTやGeminiに同じ質問をすると、「落下のリスクがあります」と正しく答えます。でもそれは、<strong>テキストにそう書いてあったから</strong>。AIは重力を体験したことがなく、ガラスが割れる感覚も知りません。「端に置くと不安定」という物理的直感を持っていないのです。
+            </p>
+            <p>
+                では、テーブルが傾いていたら？ 風が吹く屋外だったら？ 学習データに書いていない状況には対応できない ── これが、現在のAIの<strong>本質的な限界</strong>です。
+            </p>
+            <p>
+                この限界を突破しようとする研究が「<strong>世界モデル（World Model）</strong>」。2026年、ここに<strong>10億ドル超の投資</strong>が集中し、世界的な大競争が始まっています。
+            </p>
+            <p>この記事でわかること：</p>
+            <ul>
+                <li>今のAI（LLM）の「本質的な限界」とは何か</li>
+                <li>世界モデルとは何か ── 赤ちゃんの学び方とAIの共通点</li>
+                <li>2026年、誰が何に投資しているか ── 主要5プレイヤーの全体像</li>
+            </ul>
+
+            <h2>1. 今のAIは「言葉の天才」だが「世界を知らない」</h2>
+            <p>
+                ChatGPT、Gemini、Claude ── 2026年の主要AIはすべて<strong>Transformer</strong>というアーキテクチャで動いています。その本質は「大量のテキストを読んで、次に来やすい単語を予測する」こと。膨大な言語パターンを学習した結果、驚くほど流暢な文章を生成できるようになりました。
+            </p>
+            <p>
+                しかし、ここに根本的な問題があります。AIが学んだのは<strong>言葉のパターン</strong>であって、<strong>世界そのもの</strong>ではありません。
+            </p>
+            <blockquote>
+                ノーベル物理学賞を受賞したジェフリー・ヒントン（ディープラーニングの父）は「AIは人間より賢くなる可能性がある」と警告。一方、MetaのYann LeCunは「LLMは言語パターン処理に過ぎず、世界の理解には程遠い」と主張しています。
+            </blockquote>
+            <p>
+                この議論を前に進める鍵が、次に紹介する「世界モデル」です。
+            </p>
+
+            <h2>2. 世界モデルとは ── 赤ちゃんの学び方をAIに</h2>
+            <p>
+                赤ちゃんは誰にも「重力」を教わりません。でも積み木を何百回も落とすうちに、「手を離すと物は落ちる」「高いところから落ちると壊れる」を<strong>体験から理解</strong>します。
+            </p>
+            <p>
+                世界モデルは、AIに<strong>赤ちゃんと同じ学び方</strong>をさせる研究です。親から「これはこうだよ」と教わる（＝教師あり学習）のではなく、仮想空間で何百万回も試行し、<strong>世界との相互作用を通じて「直感的に」世界を理解する</strong>。
+            </p>
+            <p>
+                これが実現すると、AIは2つの力を手に入れます。
+            </p>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                <thead>
+                    <tr style="background:#f5f5f5;">
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">能力</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">説明</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">具体例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>予測する力</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">「この行動をしたら、次に何が起きるか」を物理法則に基づいて予測</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">ガラスのグラスをテーブルの端に置く → 「落ちる → 割れる → 危険」と推論</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>応用する力</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">見たことのない状況でも、学んだ物理法則を適用して判断</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">傾いたテーブル → 「より危険」、風が吹く屋外 → 「さらに危険」</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                つまり、「テキストに書いてあるから知っている」から「<strong>物理法則として理解している</strong>」への飛躍です。高齢者の見守り、工場の安全管理、自動運転 ── これらの信頼性が格段に上がる可能性を秘めています。
+            </p>
+
+            <h2>3. 将棋AIとの違い ── なぜ世界モデルは難しいのか</h2>
+            <p>
+                「AIは将棋で人間に勝った。なら世界の理解もすぐでは？」と思うかもしれません。しかし、将棋AIと世界モデルには根本的な違いがあります。
+            </p>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                <thead>
+                    <tr style="background:#f5f5f5;">
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;"></th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">将棋AI</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">世界モデル</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>学ぶ対象</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">盤面のパターン（デジタル空間）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">現実世界の物理法則（連続・無限）</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>入力</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">駒の配置（完全情報）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">カメラ映像・センサー（不完全情報）</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>ルール</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">明確に定義されている</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">ルール自体を学習する必要がある</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>現状</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">人間を超えた</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">世界的な大競争が始まったばかり</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                将棋は81マス×40種類の駒という<strong>閉じた世界</strong>です。ルールも完全に定義されています。一方、現実世界は連続的で無限。ルールそのものをAIが発見しなければならない。これが世界モデルの本質的な難しさです。
+            </p>
+
+            <h2>4. 10億ドル超の大競争 ── 5つのプレイヤー</h2>
+            <p>
+                2026年、世界モデルの研究に巨額の投資が集中しています。主要プレイヤーを整理します。
+            </p>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                <thead>
+                    <tr style="background:#f5f5f5;">
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">プレイヤー</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">キーパーソン</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">取り組み</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">規模</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>AMI Labs</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Yann LeCun（チューリング賞受賞者）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">JEPAアーキテクチャで世界モデル構築</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">シード<strong>$10.3億</strong>（欧州史上最大）</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>World Labs</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Fei-Fei Li（ImageNet創設者）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">商用世界モデル「Marble」リリース</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">評価額<strong>$50億</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>Google DeepMind</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Demis Hassabis</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Genie 3でリアルタイム3D世界生成</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">2025年8月リリース済み</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>NVIDIA</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Jensen Huang</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">Cosmosプラットフォーム</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">実世界データ2000万時間、<strong>200万DL超</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>東京大学 松尾研</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">松尾豊 教授</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">お片付けロボット、柔軟物操作の応用研究</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">2021年に世界初の寄付講座開講</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                注目すべきは<strong>Yann LeCun</strong>の動きです。2025年にMetaを退社し、2026年3月にAMI Labsを創業。「<strong>LLMでは汎用知能に到達しない。道はworld modelにある</strong>」として、欧州史上最大のシードラウンド$10.3億を調達しました。チューリング賞受賞者がキャリアを賭けた決断です。
+            </p>
+            <p>
+                LeCunが提唱する<strong>JEPA（Joint Embedding Predictive Architecture）</strong>は、画像のピクセルそのものではなく<strong>抽象的な表現</strong>を比較して学習するアーキテクチャ。「予測できない細部は無視し、本質的なパターンだけを学ぶ」という、人間の認知に近いアプローチです。
+            </p>
+            <blockquote>
+                LeCunの主張：「LLMは言語のパターンマッチに過ぎない。真の知能には、言語の理解＋世界の理解が必要だ。」
+            </blockquote>
+
+            <h2>5. 日本の松尾研 ── 世界初の寄付講座と実世界応用</h2>
+            <p>
+                東京大学 松尾・岩澤研究室は2021年に世界初の「<strong>世界モデル・シミュレータ寄付講座</strong>」を開講。巨額の資金力で勝負するGAFAMとは異なるアプローチで、<strong>実世界での応用</strong>に焦点を当てています。
+            </p>
+            <p>
+                お片付けロボットや柔軟物操作（柔らかい物体を扱うロボット制御）など、「AIが現実世界で役立つ」ための研究を推進中。テキストの理解ではなく、<strong>物理的な世界との相互作用</strong>からAIが学ぶ ── 松尾教授が提唱する「認識→行動→言語」の発展順序に基づく研究です。
+            </p>
+
+            <h2>6. ビジネスへの影響 ── 中小企業は何を見ておくべきか</h2>
+            <p>
+                「世界モデルはまだ研究段階でしょ？ うちには関係ない」── そう思われるかもしれません。確かに、今すぐ業務に使える技術ではありません。しかし、この流れが実現すると、以下のような変化が起きます。
+            </p>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                <thead>
+                    <tr style="background:#f5f5f5;">
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">分野</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">現在のAI</th>
+                        <th style="padding:12px 16px; text-align:left; border-bottom:2px solid #ddd;">世界モデル実現後</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>製造業</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">異常検知（画像パターン）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">「この部品がこう歪むと、10分後にラインが止まる」と予測</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>介護・福祉</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">カメラで転倒を検知（事後対応）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">「この歩き方だと3歩後に転倒する」と事前警告</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>物流</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">ルート最適化（数理モデル）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">天候・交通・荷物の物理特性を含めた動的シミュレーション</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;"><strong>建設</strong></td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">図面チェック（2D）</td>
+                        <td style="padding:12px 16px; border-bottom:1px solid #eee;">「この構造で地震が来たら、ここに力が集中する」と3Dシミュレーション</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                すぐにビジネスに直結しなくても、<strong>「次に何が来るか」を知っている経営者と知らない経営者</strong>では、判断の質が変わります。今のうちに「世界モデル」というキーワードだけでも覚えておいてください。
+            </p>
+
+            <h2>まとめ ── AIが「世界を理解する日」は来るのか</h2>
+            <p>
+                現在のChatGPTやGeminiは「言葉の天才」です。でも「世界の理解」は持っていない。世界モデルが実現すれば、AIは物理法則も理解するようになります。
+            </p>
+            <p>
+                それは怖いことでしょうか？ 私はむしろワクワクしています。高齢者の見守りが格段に信頼できるようになる。工場の安全管理がリアルタイムで予測的になる。自動運転がようやく「本当に安全」になる。
+            </p>
+            <p>
+                でも忘れないでください。<strong>AIがどれだけ賢くなっても、「何のために使うか」を決めるのは人間です。</strong>
+            </p>
+            <blockquote>
+                技術の進化を恐れるのではなく、理解し、使いこなす側に立つ。それが、AI時代を生きる経営者に求められる姿勢ではないでしょうか。
+            </blockquote>
+
+            <h2>出典</h2>
+            <ul>
+                <li>TechCrunch, "Yann LeCun's AMI Labs raises $1.03B to build world models" (2026/3/9)</li>
+                <li>PYMNTS, "Google DeepMind Introduces Project Genie for Interactive AI World Building" (2026)</li>
+                <li>東京大学 松尾・岩澤研究室 世界モデル講座 (weblab.t.u-tokyo.ac.jp)</li>
+                <li>Vaswani et al., "Attention Is All You Need", NeurIPS 2017</li>
+            </ul>
+
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AI研修で「AIの仕組み」を体験しませんか？</h3>
+            <p>松竹梅3コースのAI研修で、AIの中身（Transformer・世界モデル）を分かりやすく解説するセッションがあります。リスキリング助成金対応。</p>
+            <a href="../aieducation.html" class="btn btn-primary">AI講座の詳細を見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="009-ai-agent-evolution-2026.html" class="column-nav-prev">&larr; 前の記事: 「対話」から「実行」へ ── 2026年、すべてのAIが「エージェント」になった</a>
+            <span></span>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
