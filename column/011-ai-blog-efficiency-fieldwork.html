@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="現場作業が中心でPCに不慣れな社員でも、スマホで撮った作業写真からSEO対応のブログ記事をAIが自動生成。写真が撮れない現場への対応策も含め、中小企業の広報を変えたAIツール開発の実践記録。">
+    <title>普段PCを使わない「現場の社員」が、スマホ写真だけでブログを書ける仕組みをつくった話 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Subsidy Banner -->
+    <div class="subsidy-banner">
+        <span class="banner-new">NEW</span>
+        <a href="../subsidy-list.html">北海道で現在募集中の補助金情報をまとめました &rarr;</a>
+    </div>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-03-22">2026.03.22</time>
+                </div>
+                <h1>普段PCを使わない「現場の社員」が、スマホ写真だけでブログを書ける仕組みをつくった話</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+            <div class="container">
+
+                <h2>はじめに ── 「写真はあるんですけど、ブログが書けないんです」</h2>
+
+                <p>ある企業の社長から、こんな相談を受けました。</p>
+
+                <blockquote>
+                    「うちのスタッフは現場仕事が中心で、PCの前に座る時間がほとんどない。でも、会社のブログは更新したい。写真は撮ってるんです。でも、それを文章にする時間も、正直に言うとスキルも足りなくて……」
+                </blockquote>
+
+                <p>この悩み、実は多くの中小企業に共通しています。</p>
+
+                <p>建設、清掃、メンテナンス、介護、農業──<strong>現場で価値を生む仕事をしている社員</strong>ほど、デスクワークに割ける時間がありません。しかし、ブログやSNSでの情報発信は、新規顧客の獲得に直結します。特にGoogleで「地域名＋サービス名」で検索して業者を探す時代、<strong>ブログを書いている会社と書いていない会社では、見つけてもらえる確率が大きく違う</strong>のです。</p>
+
+                <p>そこで私は、<strong>スマホで撮った写真をアップロードするだけで、SEO対応のブログ記事をAIが自動生成するツール</strong>を開発しました。</p>
+
+                <h2>「Before/Afterが撮れない」という想定外の壁</h2>
+
+                <p>最初に作ったのは、施工前と施工後の写真2枚からブログ記事を生成するツールでした。</p>
+
+                <p>仕組みはシンプルです。Googleが提供するAI「Gemini」の画像認識機能を使い、2枚の写真の違いを読み取らせます。そこに、業種に合わせたプロンプト（AIへの指示文）を組み合わせることで、「読者の悩みに共感し、プロの仕事ぶりをアピールし、問い合わせにつなげる」構成の記事が自動で出来上がります。</p>
+
+                <p>これは好評でした。社員の方々が空き時間にスマホで使い始め、ブログの更新頻度が目に見えて上がりました。</p>
+
+                <p>しかし、しばらくして想定外の声が届きました。</p>
+
+                <p><strong>「写真はあるんですが、Before/Afterにならないんです」</strong></p>
+
+                <p>現場によっては、被害が目に見えにくいことがあります。例えば、液体の漏洩事故。漏れた液体は床下や土壌に浸透してしまい、見た目にはほとんど変化がありません。臭いや測定器の数値でしか被害を確認できない。そうなると、Before/Afterの写真を撮っても「同じに見える」のです。</p>
+
+                <p>一方で、<strong>作業中の写真──機材を設置している様子、測定器で数値を確認している場面、養生を施している風景──は豊富にある</strong>とのことでした。報告書用に必ず撮影しているからです。</p>
+
+                <h2>「作業写真モード」の開発 ── 写真の意味をAIに教える</h2>
+
+                <p>この課題を解決するために、<strong>「作業写真モード」</strong>を新たに開発しました。</p>
+
+                <p>Before/After2枚の比較ではなく、<strong>作業中の写真を最大4枚</strong>アップロードできるモードです。AIには「これはBefore/Afterではなく、作業プロセスの写真です」と明示し、写真に写っている機材や作業の様子から<strong>プロの仕事ぶり</strong>を読み取るよう指示します。</p>
+
+                <p>ポイントは、<strong>AIに「なぜこの作業が必要なのか」を教えること</strong>でした。</p>
+
+                <p>例えば、測定器を構えている写真だけでは、一般の読者には何をしているのか分かりません。しかしAIに「目に見えない汚染は測定器でしか確認できない。この測定こそがプロの仕事の証」と指示しておけば、写真1枚から<strong>「なぜ専門家に頼むべきなのか」を読者に伝える記事</strong>が生成できます。</p>
+
+                <p>現場区分を選択式にしたのも工夫のひとつです。現場の種類によって、読者の悩みも、使うべきキーワードも、アピールすべきポイントも異なります。選択肢を選ぶだけで、AIへの指示が最適化される仕組みにしました。</p>
+
+                <h2>SEOは「設定済み」── 社員が意識しなくていい仕組み</h2>
+
+                <p>もうひとつ重視したのが、<strong>社員がSEOを意識しなくても、SEO対応の記事が出来上がる</strong>ことです。</p>
+
+                <p>ツールの裏側では、以下の処理が自動で行われています。</p>
+
+                <h3>1. 地域名の自動挿入</h3>
+                <p>入力された地域名（例:「札幌市清田区」）がタイトルと本文に自然に織り込まれます。「地域名＋サービス名」で検索する見込み客に見つけてもらうためです。</p>
+
+                <h3>2. 業種特化キーワードの埋め込み</h3>
+                <p>業種ごとに、検索されやすいキーワードをあらかじめ設定しています。社員は写真をアップロードするだけ。キーワード選定という、本来なら専門知識が必要な作業を省略できます。</p>
+
+                <h3>3. FAQ・ハッシュタグの自動生成</h3>
+                <p>記事末尾に「よくある質問」とハッシュタグが自動で付きます。FAQはGoogle検索の「他の人はこちらも質問」に表示されやすく、SEO効果が高い要素です。</p>
+
+                <h3>4. 記事構成の統一</h3>
+                <p>「冒頭のまとめ → 読者の悩みに共感 → 作業工程の説明 → 費用の話 → 問い合わせ誘導」という、<strong>読者を行動に導く構成</strong>が毎回自動で適用されます。</p>
+
+                <h2>Before/Afterと作業写真の統合 ── 1つのツールで使い分ける</h2>
+
+                <p>Before/After版と作業写真版、2つのツールを別々に運用していましたが、「どっちを使えばいいか迷う」という声を受けて、<strong>1つの画面にタブ切替で統合</strong>しました。</p>
+
+                <p>タブを切り替えると、画面のテーマカラーが変わります。Before/Afterモードではオレンジ色、作業写真モードでは青色。<strong>今どちらのモードを使っているかが一目で分かる</strong>ようにしました。小さな工夫ですが、PCに不慣れな方にとって「今何をしているのか」が視覚的に明確であることは重要です。</p>
+
+                <p>共通の設定項目（地域名、作業人数、追加キーワードなど）は1箇所にまとめ、操作の重複を排除しました。</p>
+
+                <h2>追加キーワード ── 現場を知る社員の「ひとこと」が記事を変える</h2>
+
+                <p>開発を進める中で気づいた重要なことがあります。<strong>現場の社員だけが知っている情報こそ、最も価値がある</strong>ということです。</p>
+
+                <p>例えば、「この現場は保険が全額認定された」「隣の家まで調査した」「土を1.5トン入れ替えた」。こうした具体的な情報は、AIだけでは生成できません。しかし、記事に盛り込めば、読者の信頼感は格段に上がります。</p>
+
+                <p>そこで、<strong>「追加キーワード」という1行入力欄</strong>を設けました。社員が「保険全額認定」とだけ入力すれば、AIがその事実を記事全体に自然に織り込みます。長い文章を書く必要はありません。現場のプロが持つ知見を、最小の入力で最大限に活かす仕組みです。</p>
+
+                <h2>まとめ ── AIは「書く」を代行し、人は「知っている」を提供する</h2>
+
+                <p>このプロジェクトで実感したのは、<strong>AIと人間の役割分担</strong>です。</p>
+
+                <p>AIは文章を書くのが得意です。SEOのルールに沿った構成、適切なキーワードの配置、読者心理に合わせたトーン。これらはAIに任せられます。</p>
+
+                <p>一方、<strong>現場の空気感、作業の難しさ、お客様の声</strong>──これは現場にいる人間にしか分かりません。</p>
+
+                <p>このツールが実現したのは、<strong>「PCが苦手な現場の社員」と「文章が得意なAI」のチームプレー</strong>です。社員はスマホで写真を撮り、キーワードをひとこと添える。AIがそれを読み取り、プロの仕事を伝える記事に仕上げる。</p>
+
+                <p>もし「ブログを更新したいけど、社員に書かせるのは難しい」とお感じでしたら、こうしたAIツールの導入を検討されてみてはいかがでしょうか。業種や現場の特性に合わせたカスタマイズも可能です。お気軽にご相談ください。</p>
+
+            </div>
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AI活用で業務効率化しませんか？</h3>
+            <p>写真からのブログ自動生成をはじめ、業種に合わせたAIツール開発・導入支援を行っています。リスキリング助成金対応のAI研修もご用意しています。</p>
+            <a href="../aieducation.html" class="btn btn-primary">AI講座の詳細を見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="010-world-model-ai-2026.html" class="column-nav-prev">&larr; 前の記事: AIは「重力」を知らない ── 10億ドルが動く「世界モデル」が変える未来</a>
+            <span></span>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
