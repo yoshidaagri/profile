@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIが作った講座資料に紛れ込んだ、もっともらしい間違い。人の目で偶然止まった失敗を機に、「作るAI」と「検証するAI」を分ける番人の仕組みを整えた実践記録。中小企業がAIを業務で使うときのチェック体制の作り方。">
+    <title>AIの間違いは、誰が止めるのか ── 私がAIチームに「番人」を置いている理由 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Subsidy Banner -->
+    <div class="subsidy-banner">
+        <span class="banner-new">NEW</span>
+        <a href="../subsidy-list.html">北海道で現在募集中の補助金情報をまとめました &rarr;</a>
+    </div>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-07-16">2026.07.16</time>
+                </div>
+                <h1>AIの間違いは、誰が止めるのか ── 私がAIチームに「番人」を置いている理由</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+            <div class="container">
+
+                <h2>はじめに ── もっともらしい間違いは、静かに紛れ込む</h2>
+
+                <p>先日、ある企業様向けのAI講座で、ひやりとする出来事がありました。</p>
+
+                <p>受講者の事前アンケートに「AIの利用コストが心配」という声があり、講座資料に補助金の話題を盛り込むことにしました。資料の下調べと作成はいつものように私のAIチームに任せ、私は最終確認だけ。すると、出来上がったスライドにこう書いてあったのです。</p>
+
+                <blockquote>
+                    「AI導入の補助金（最大450万円）でAIの利用費をカバーできます」
+                </blockquote>
+
+                <p>一見、親切で正しそうな記述です。しかし補助金を専門にしている私には引っかかりました。その補助金は設備やシステムの「導入」に使えるもので、ChatGPTのような<strong>AIサービスの月額利用料に充てられる制度ではない</strong>のです。もしこのまま講座で話していたら、受講者に誤った期待を持たせるところでした。</p>
+
+                <p>このとき私が痛感したのは、間違いそのものより、<strong>「私がたまたま気づいたから止まった」という事実</strong>でした。仕組みで止まったのではなく、偶然、人の目で止まったのです。</p>
+
+                <p>今回は、この失敗を機に私が整えている「AIの間違いをAIに止めさせる仕組み」──社内で<strong>番人</strong>と呼んでいる体制についてお話しします。</p>
+
+                <h2>なぜAIは、もっともらしい間違いをするのか</h2>
+
+                <p>AIの間違いというと、明らかにおかしな文章や、事実無根のデタラメを想像するかもしれません。しかし実務で本当に怖いのは、そういう分かりやすい間違いではありません。</p>
+
+                <p>怖いのは、<strong>9割正しい情報の中に、1割の不正確さが自然な顔で混ざっている</strong>ケースです。</p>
+
+                <p>先ほどの補助金の例がまさにそうでした。補助金の名称は実在する。金額もおおむね合っている。「AI導入を支援する」という趣旨も間違っていない。ただ、「利用料に使えるか」という一点だけが不正確だった。この種の間違いは、その分野の専門知識がないと見抜けません。</p>
+
+                <p>そしてもうひとつ厄介なのは、AIは自分の間違いに気づきにくいということです。人間でも、自分が書いた文章の間違いは見つけにくいものです。書いた本人は「正しいつもり」で書いているからです。AIも同じで、<strong>作った本人（AI）に「これで合ってる?」と聞いても、あまり意味がない</strong>のです。</p>
+
+                <h2>解決策は「作るAI」と「検証するAI」を分けること</h2>
+
+                <p>では、どうするか。私の答えは、人間の組織と同じ考え方でした。</p>
+
+                <p>品質管理の世界には「作る人と検査する人を分ける」という大原則があります。製造業の検査部門が製造部門から独立しているのも、経理で入力する人と承認する人を分けるのも、同じ理屈です。作った本人は、自分の成果物を疑えない。だから<strong>別の目</strong>を制度として用意するのです。</p>
+
+                <p>私はこれをAIにも適用しました。具体的には、役割の違うAIを複数用意し、それぞれに名前を付けて「別の担当者」として運用しています。</p>
+
+                <ul>
+                    <li><strong>着手前の番人</strong>: 作業を始める前に、一次情報(公式の資料や原文)に当たって実現性を検証する担当</li>
+                    <li><strong>品質の番人</strong>: 出来上がった成果物を、あえて疑ってかかる担当。「本当に正しいか」を反証する視点でチェックする</li>
+                    <li><strong>実画面の番人</strong>: システムなら、実際に画面を操作して「本当に動くか」を確認する担当</li>
+                    <li><strong>デザインの番人</strong>: 資料が「伝わる形」になっているかを監修する担当</li>
+                </ul>
+
+                <p>ポイントは、検証役のAIに<strong>「これを褒めてください」ではなく「これの間違いを探してください」と役割ごと与える</strong>ことです。同じAIでも、与える役割によって働き方はまったく変わります。作る役割のAIは「早く完成させたい」方向に働きますが、検証する役割のAIは「粗を探したい」方向に働く。この対立構造が、品質を守ってくれるのです。</p>
+
+                <h2>それでもすり抜けた ── 失敗から学んだ「専門知識の関所」</h2>
+
+                <p>ここまで読んで、「番人がいたのに、なぜ補助金の間違いは通ったのか」と思われたかもしれません。鋭いご指摘です。</p>
+
+                <p>実は当時、調査担当のAIが集めた情報が、検証を経ずにそのまま資料作成の担当に渡っていました。調査AIは「それらしい情報」を集めるのは得意ですが、<strong>補助金制度の細かい適用条件までは責任を持てない</strong>。つまり、番人の網に「専門分野の関所」が抜けていたのです。</p>
+
+                <p>この失敗を受けて、私はルールをひとつ足しました。<strong>補助金・法制度・お金の数字が絡む内容は、必ずその分野を専門とする担当(AIと私自身)のチェックを通してから資料に載せる</strong>、という関所です。</p>
+
+                <p>ここで大事なのは、失敗を「AIは信用できない」で終わらせないことです。人間の組織でも、新人がミスをしたら「二度と仕事を任せない」ではなく、チェック体制を見直しますよね。AIも同じです。<strong>間違いが起きた経路を特定して、そこに関所を置く</strong>。これを繰り返すことで、チームは着実に賢くなっていきます。</p>
+
+                <h2>中小企業がAIを使うとき、最低限やっておきたいこと</h2>
+
+                <p>「AIを何体も動かすなんて大げさだ」と感じる方も多いと思います。そこで、明日からできる最小限のチェック体制を3つご紹介します。</p>
+
+                <h3>1. AIの出力を「別の会話」でチェックさせる</h3>
+                <p>AIに文章を作らせたら、その続きで「合ってる?」と聞くのではなく、<strong>新しい会話を開いて</strong>「この文章の事実誤認を探してください」と依頼してみてください。これだけで、作る役と検証する役の分離ができます。</p>
+
+                <h3>2. 「数字・制度・固有名詞」は人間が最終確認する</h3>
+                <p>AIの間違いが実害につながりやすいのは、金額、日付、制度の適用条件、会社名や商品名です。逆に言えば、<strong>この4種類だけは人間が原典に当たる</strong>と決めておけば、リスクの大半は抑えられます。</p>
+
+                <h3>3. 間違いが見つかったら「経路」を記録する</h3>
+                <p>間違いそのものより、「どの工程で混入し、どこを素通りしたか」が財産になります。私のチームでは間違いのたびに改善メモを残し、定期的にチェック体制へ反映しています。</p>
+
+                <h2>まとめ ── AIの時代こそ、「疑う仕組み」が価値になる</h2>
+
+                <p>冒頭の補助金の一件は、幸い講座の前に止められました。しかし、あれが「私の目」という偶然に頼った結果だったことを、私は忘れないようにしています。</p>
+
+                <p>AIはこれからも、もっともらしい間違いを紛れ込ませてきます。それはAIの欠陥というより、確率で文章を作る道具の性質です。だからこそ、AIを業務に使う会社の実力は、<strong>「どれだけ上手に作らせるか」よりも「どれだけ確実に間違いを止められるか」</strong>に表れる時代になると私は考えています。</p>
+
+                <p>作る力はAIの進化が勝手に上げてくれます。しかし疑う仕組みは、自社で設計するしかありません。もし「AIの出力をそのまま使うのは不安だ」と感じておられるなら、その感覚はとても健全です。その不安を、チェック体制という形に変えるところから始めてみてはいかがでしょうか。</p>
+
+            </div>
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AIを「安心して」業務に使う体制づくりを支援します</h3>
+            <p>AIの活用方法だけでなく、間違いを止めるチェック体制まで含めた実務定着型のAI研修・導入支援を行っています。リスキリング助成金対応のAI研修もご用意しています。</p>
+            <a href="../aieducation.html" class="btn btn-primary">AI講座の詳細を見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="011-ai-blog-efficiency-fieldwork.html" class="column-nav-prev">&larr; 前の記事: 普段PCを使わない「現場の社員」が、スマホ写真だけでブログを書ける仕組みをつくった話</a>
+            <span></span>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
