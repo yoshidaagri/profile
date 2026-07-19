@@ -145,21 +145,13 @@
 
                 <p>本実験は25項目。結果を正直に書きます。</p>
 
-                <p style="font-weight:700;color:#004d40;margin:20px 0 8px;">【表1：本実験の結果サマリ】</p>
-                <table>
-                    <tr><th>指標</th><th>数値</th><th>意味</th></tr>
-                    <tr><td>完全一致率</td><td><strong>32%</strong>（8/25）</td><td>人間と全く同じ4段階評価を返した割合</td></tr>
-                    <tr><td>方向一致率</td><td><strong>56%</strong>（14/25）</td><td>OK系 vs 不足系の2分類で一致した割合</td></tr>
-                    <tr><td>Cohen's κ</td><td><strong>0.217</strong></td><td>偶然の一致を除いた評価者間の合意度<sup>※5</sup></td></tr>
-                    <tr><td>ダミー分類器</td><td><strong>64%</strong></td><td>「全件OK」と答えるだけの最低ラインの正答率</td></tr>
-                    <tr><td>処理時間</td><td><strong>57分</strong>（25項目）</td><td>エラー0件で完走</td></tr>
-                    <tr><td>不一致の偏り</td><td>厳しい方向10件 / 見逃し1件</td><td>Gemmaは「拾いすぎる」傾向</td></tr>
-                </table>
-                <p><small><sup>※5</sup> κ（カッパ）は0が「偶然レベル」、1が「完全一致」。0.217は「わずかな一致」に分類されます。</small></p>
+                <p><strong>完全一致（人間と全く同じ判定）：32%。方向一致（OK系か不足系かの大分類）：56%。</strong> 100点満点なら56点。合格ラインには届いていません<sup>※3</sup>。</p>
 
-                <p><strong>正直に言えば、この数字は「使える」と言い切れるものではありません。</strong> 方向一致率56%は、何も考えず全部OKと答えるダミー分類器の64%を下回っています<sup>※1</sup>。Cohen's κ=0.217は統計的に「わずかな一致」であり、「AIが判定しました」と胸を張れる水準ではない。</p>
+                <p>一方で、<strong>処理時間は57分</strong>。人間がこの設計書を1項目ずつ読んで判定すると、1項目あたり約10分はかかります。25項目なら250分──<strong>4時間以上</strong>です。57分で25項目をエラーゼロで完走したスピードだけを見れば、圧倒的に速い。</p>
 
-                <p>では、この実験は失敗だったのか？ 私はそうは思っていません。</p>
+                <p>ただし、速くても的外れでは意味がありません。不一致の中身を見ると、はっきりした癖がありました。<strong>Gemmaは愚直に単語を拾って評価する</strong>。人間が読めば「これは書いてあるから丸（OK）だよね」「まあ三角（一部不足）くらいかな」と判断できる項目でも、チェックリストの語彙と設計書の語彙が少しでもズレていると、バツ（記載なし）にしてしまう<sup>※7</sup>。</p>
+
+                <p>不一致17件のうち、Gemmaが厳しすぎた方向（人間ならOKだがGemmaは不足と判定）が<strong>10件</strong>。逆に見逃した（人間は不足だがGemmaはOK）のは<strong>1件だけ</strong><sup>※3</sup>。つまり、「拾いすぎる」けれど「見逃さない」。品質管理としては、見逃しが少ないこと自体は悪くない。問題は、拾いすぎて人間が精査する量が減らないことです。</p>
 
                 <h2>「配管は動いた。水質はこれから」</h2>
 
@@ -235,7 +227,6 @@
                     <p><sup>※2</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">Stop Choosing Between Local and Cloud LLMs: A Field Guide to Hybrid Patterns | Towards Data Science</a>（閲覧日 2026-07-19）</p>
                     <p><sup>※3</sup> 自社実験データ（実施日 2026-07-17〜18）。パイロット3件→本実験25項目の全工程記録</p>
                     <p><sup>※4</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">同上</a>。5つのハイブリッドパターン分類のうち「Plan-then-Ground」</p>
-                    <p><sup>※5</sup> Landis &amp; Koch (1977) "The Measurement of Observer Agreement for Categorical Data", Biometrics, 33(1), pp.159-174</p>
                     <p><sup>※6</sup> <a href="https://augusto.digital/insights/blogs/monthly-llm-news-july-2026/">Monthly LLM News July 2026 - Augusto Digital</a>（閲覧日 2026-07-19）。DeepSeek V4-Pro SWE-bench Verified 80.6%</p>
                     <p><sup>※7</sup> 自社実験データ（実施日 2026-07-19）。過検出17件の原因分類（読解ミス7/語彙乖離5/AND合成2/検知正当8）、v4変更点（記載有無判定への限定＋1事実1要素分解）、合格基準（方向一致80%以上・見逃し0〜1件）</p>
                 </div>
