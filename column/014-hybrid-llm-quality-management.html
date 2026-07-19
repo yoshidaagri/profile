@@ -108,16 +108,32 @@
                 <p><strong>実際の事業計画書を読んで判定するのは、ローカルのGemma4が行う。</strong> 企業の機密データはパソコンの外に出ない。Claudeが作った「ルーブリック」というレシピだけがクラウドを経由する。レシピ自体には機密情報は一切含まれません。</p>
 
                 <p style="font-weight:700;color:#004d40;margin:20px 0 8px;">【図1：ハイブリッドLLM方式の構成】</p>
-                <pre style="background:#f5f5f5;padding:20px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;border:1px solid #e0e0e0">
-┌─────────────────────────┐       ┌─────────────────────────┐
-│  Claude（クラウド）       │       │  Gemma4（ローカルPC）    │
-│                         │       │                         │
-│ ・評価基準の設計          │ ────→ │ ・事業計画書を読む        │
-│ ・ルーブリック作成        │レシピ  │ ・基準に沿って4段階判定   │
-│ ・判定手順の明文化        │のみ   │ ・結果をJSON出力         │
-│                         │       │                         │
-│ 機密データに触れない      │       │ データは外に出ない        │
-└─────────────────────────┘       └─────────────────────────┘</pre>
+                <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin:20px 0">
+                    <div style="flex:1;min-width:260px;max-width:380px;background:#e8f3f0;border:2px solid #1f6f5c;border-radius:12px;padding:20px;text-align:center">
+                        <div style="font-size:32px;margin-bottom:8px">&#9729;</div>
+                        <h4 style="color:#1f6f5c;margin:0 0 12px;font-size:16px">Claude (クラウドAI)</h4>
+                        <ul style="text-align:left;font-size:14px;margin:0;padding-left:18px;list-style:disc">
+                            <li>評価基準を設計する</li>
+                            <li>ルーブリックを作る</li>
+                            <li>判定手順を明文化する</li>
+                        </ul>
+                        <p style="font-size:13px;color:#1f6f5c;margin:12px 0 0;font-weight:700">機密データに触れない</p>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:80px">
+                        <div style="font-size:28px;color:#1f6f5c">&#10145;</div>
+                        <div style="font-size:12px;color:#5b6770;margin-top:4px">レシピのみ</div>
+                    </div>
+                    <div style="flex:1;min-width:260px;max-width:380px;background:#f7f8fa;border:2px solid #5b6770;border-radius:12px;padding:20px;text-align:center">
+                        <div style="font-size:32px;margin-bottom:8px">&#128187;</div>
+                        <h4 style="color:#2b3440;margin:0 0 12px;font-size:16px">Gemma4 (ローカルPC)</h4>
+                        <ul style="text-align:left;font-size:14px;margin:0;padding-left:18px;list-style:disc">
+                            <li>事業計画書を読む</li>
+                            <li>基準に沿って4段階判定</li>
+                            <li>結果をJSONで出力</li>
+                        </ul>
+                        <p style="font-size:13px;color:#2e7d4f;margin:12px 0 0;font-weight:700">データは外に出ない</p>
+                    </div>
+                </div>
 
                 <p>ポイントは、<strong>クラウドに送るのが「レシピ（判定基準）」だけ</strong>という点です。事業計画書の中身は一文字も外に出ません。</p>
 
