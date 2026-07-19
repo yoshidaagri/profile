@@ -163,11 +163,13 @@
 
                 <p><strong>1つ目：間違える方向が「厳しすぎる」側に偏っている。</strong> 不一致17件のうち、Gemmaが厳しすぎた（人間はOKだがGemmaは不足と判定）のが10件。逆に見逃した（人間は不足だがGemmaはOK）のは1件だけです<sup>※3</sup>。品質管理の文脈では、「見逃す」より「拾いすぎる」方が安全です。</p>
 
-                <p><strong>2つ目：精度を上げる余地が構造的に残っている。</strong> 今回のモデルは120億パラメータのGemma4です。2026年7月時点で、MITライセンスのオープンモデル（DeepSeek V4-Proなど）がSWE-bench Verifiedで80.6%を記録しています<sup>※6</sup>。「配管」はモデルを差し替えるだけで動くので、より大きなモデルで「水質」を引き上げる実験が次のステップです。</p>
+                <p>では、精度を上げるにはどうすればいいか？ 「もっと賢いモデルに変えよう」が最初に浮かびます。でも、大きなモデルはそれだけメモリを食います。今回の実験はMacBook Air（M3・24GB）で動かしていて、この環境で回せることが中小企業にとっての現実的な条件です。高価なGPUサーバーを前提にした話は、読んでくださっている方の役に立ちません。</p>
+
+                <p>そこで、<strong>モデルを変えずに精度を上げる方法</strong>を探りました。</p>
 
                 <h2>是正対策：「仕事の渡し方」を変える</h2>
 
-                <p>方向一致56%──この数字を見て、最初に思いつくのは「もっと賢いモデルに変えよう」です。でも、不一致17件の原因を1件ずつ人間が分類してみたら、<strong>問題はモデルの頭の良さではなかった</strong>。</p>
+                <p>不一致17件の原因を1件ずつ人間が分類してみたら、<strong>問題はモデルの頭の良さではなかった</strong>。</p>
 
                 <p>不一致の内訳を調べると、こうなっていました<sup>※7</sup>。</p>
 
@@ -227,7 +229,6 @@
                     <p><sup>※2</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">Stop Choosing Between Local and Cloud LLMs: A Field Guide to Hybrid Patterns | Towards Data Science</a>（閲覧日 2026-07-19）</p>
                     <p><sup>※3</sup> 自社実験データ（実施日 2026-07-17〜18）。パイロット3件→本実験25項目の全工程記録</p>
                     <p><sup>※4</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">同上</a>。5つのハイブリッドパターン分類のうち「Plan-then-Ground」</p>
-                    <p><sup>※6</sup> <a href="https://augusto.digital/insights/blogs/monthly-llm-news-july-2026/">Monthly LLM News July 2026 - Augusto Digital</a>（閲覧日 2026-07-19）。DeepSeek V4-Pro SWE-bench Verified 80.6%</p>
                     <p><sup>※7</sup> 自社実験データ（実施日 2026-07-19）。過検出17件の原因分類（読解ミス7/語彙乖離5/AND合成2/検知正当8）、v4変更点（記載有無判定への限定＋1事実1要素分解）、合格基準（方向一致80%以上・見逃し0〜1件）</p>
                 </div>
 
