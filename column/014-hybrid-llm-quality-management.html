@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="クラウドAI（Claude）が評価基準を設計し、ローカルAI（Gemma4）が機密データを外に出さず判定を実行する「ハイブリッドLLM方式」の品質管理実験記録。完全一致32%・方向一致56%、ダミー分類器に負けた数字も隠さず全公開。">
+    <title>大手AIが設計し、小さなAIが実行する ── 品質管理を「ハイブリッドLLM」で自動化する構想 | コラム | 吉田中小企業診断士事務所</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Subsidy Banner -->
+    <div class="subsidy-banner">
+        <span class="banner-new">NEW</span>
+        <a href="../subsidy-list.html">北海道で現在募集中の補助金情報をまとめました &rarr;</a>
+    </div>
+
+    <!-- Header / Global Navigation -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    吉田中小企業診断士事務所
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#profile">Profile</a></li>
+                    <li><a href="../index.html#ai-projects">AI Projects</a></li>
+                    <li><a href="../index.html#service">中小企業支援</a></li>
+                    <li><a href="../aieducation.html">AI講座</a></li>
+                    <li><a href="../index.html#column" class="nav-active">コラム</a></li>
+                    <li><a href="../index.html#startup">創業・Startup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="column-article-header">
+            <div class="container">
+                <div class="column-article-meta">
+                    <span class="column-category cat-aidx">AI/DX</span>
+                    <time class="column-date" datetime="2026-07-19">2026.07.19</time>
+                </div>
+                <h1>大手AIが設計し、小さなAIが実行する ── 品質管理を「ハイブリッドLLM」で自動化する構想</h1>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="column-article-body">
+            <div class="container">
+
+                <h2>はじめに ── 25項目のチェックを、人間がやり続けられるか</h2>
+
+                <p>品質管理の仕事をしていると、ひとつの壁にぶつかります。</p>
+
+                <p>「チェックリストはある。基準もある。でも、毎回25項目を同じ精度で見続けるのは、人間には難しい。」</p>
+
+                <p>私は中小企業診断士として、企業の品質管理体制を支援しています。ある案件で、事業計画書の記載内容が社内基準を満たしているかを1項目ずつ確認する仕事がありました。25項目、それぞれに「OK / 一部不足 / NG / 記載なし」の4段階で評価する。1件あたり30分。案件が増えるたびに、この30分が積み上がっていく。</p>
+
+                <p>「これ、AIにやらせたらどうなるんだろう」──そう思って始めた実験の記録です。</p>
+
+                <p>先に結論を書きます。<strong>精度は、まだ人間には届いていません。</strong>「全件OKと言い張るダミー分類器」にすら負けた指標もあります<sup>※1</sup>。それでも、この実験で得た構造──大手AIが「判定の仕組み」を設計し、手元の小型AIが「実際の判定」を実行する──には、中小企業のAI活用に応用できる考え方が詰まっていました。</p>
+
+                <p>成功談ではなく、数字を全部見せる実験記録として読んでいただければ幸いです。</p>
+
+                <h2>「全部クラウドAI」ではダメだった理由</h2>
+
+                <p>最初に考えたのは、ClaudeやGPTのようなクラウドAIに事業計画書を丸ごと読ませて判定させる方法です。</p>
+
+                <p>技術的にはこれが一番簡単ですが、すぐに2つの問題にぶつかりました。</p>
+
+                <p><strong>1つ目は、守秘義務。</strong> 事業計画書には企業の戦略・財務情報・技術的な秘密が詰まっています。これをそのままクラウドに送るのは、お客様との信頼関係の上でできません。たとえAPI利用規約で「学習に使わない」と書いてあっても、クラウドLLMプロバイダーの一部は品質保証や安全フィルタのためにプロンプトの一部をランダムに人間が監査する運用を持っています<sup>※2</sup>。「外部サーバーに送った」という事実自体がリスクなのです。</p>
+
+                <p><strong>2つ目は、コスト。</strong> 事業計画書は長文です。25項目×1件あたりの処理で数千トークンを消費します。案件が増えれば月額コストは膨らみ、中小企業の業務改善としてはペイしません。</p>
+
+                <p>では、最初からローカルAI（自分のパソコンで動くAI）だけでやればいいか？ これも試しました。</p>
+
+                <h2>「全部ローカルAI」でもダメだった理由</h2>
+
+                <p>パソコンにGemma4という120億パラメータのAIモデルを入れて、事業計画書の評価をさせてみました。データは外に出ない。コストはゼロ（電気代だけ）。守秘義務の問題は完全にクリアです。</p>
+
+                <p>ところが、精度に問題がありました。</p>
+
+                <p>最初の3件のパイロットテスト。結果は<strong>全件「OK」</strong>。「この計画書は基準を満たしています」と自信満々に答えてくれましたが、人間の専門家が見ると3件中2件は「一部不足」や「NG」の項目を含んでいました<sup>※3</sup>。</p>
+
+                <p>原因を調べると、<strong>評価プロンプトに判定基準（ルーブリック）が一切なかった</strong>のです。「評価してください」と出力フォーマットだけを渡し、「OKとは何か」の定義を書いていなかった。関連する記述を見つけた瞬間に「ある＝OK」と判定してしまう──<strong>楽観バイアス</strong>です<sup>※3</sup>。</p>
+
+                <p>「記述が存在すること」と「基準を満たしていること」は別物です。これは小型モデルの典型的な弱点ですが、よく考えると人間のチェックでも起こりうる見落としです。</p>
+
+                <h2>たどり着いた答え：「設計はクラウド、実行はローカル」</h2>
+
+                <p>ここで発想を変えました。</p>
+
+                <p>この構成は、AI業界では「Plan-then-Ground」パターンと呼ばれています<sup>※4</sup>。クラウドの大型AIが汎用的な計画やルールを作り、ローカルの小型AIがそれを手元のデータに適用する、という分業です。</p>
+
+                <p><strong>クラウドAI（Claude）には、「何をどう判定するか」の設計だけを任せる。</strong> 具体的には、評価の基準（ルーブリック）を作らせました。「OKとは、確認内容の全構成要素が事業計画書に明示的に記述されていること」「迷ったら厳しい方を選ぶ」──こうした判定ルールを文書化させたのです<sup>※3</sup>。</p>
+
+                <p><strong>実際の事業計画書を読んで判定するのは、ローカルのGemma4が行う。</strong> 企業の機密データはパソコンの外に出ない。Claudeが作った「ルーブリック」というレシピだけがクラウドを経由する。レシピ自体には機密情報は一切含まれません。</p>
+
+                <p style="font-weight:700;color:#004d40;margin:20px 0 8px;">【図1：ハイブリッドLLM方式の構成】</p>
+                <pre style="background:#f5f5f5;padding:20px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;border:1px solid #e0e0e0">
+┌─────────────────────────┐       ┌─────────────────────────┐
+│  Claude（クラウド）       │       │  Gemma4（ローカルPC）    │
+│                         │       │                         │
+│ ・評価基準の設計          │ ────→ │ ・事業計画書を読む        │
+│ ・ルーブリック作成        │レシピ  │ ・基準に沿って4段階判定   │
+│ ・判定手順の明文化        │のみ   │ ・結果をJSON出力         │
+│                         │       │                         │
+│ 機密データに触れない      │       │ データは外に出ない        │
+└─────────────────────────┘       └─────────────────────────┘</pre>
+
+                <p>ポイントは、<strong>クラウドに送るのが「レシピ（判定基準）」だけ</strong>という点です。事業計画書の中身は一文字も外に出ません。</p>
+
+                <h2>実験結果：数字を全部見せます</h2>
+
+                <p>ルーブリックを入れた途端、結果が変わりました。</p>
+
+                <p>パイロット3件の再テスト。不足のある2件を両方とも「不足あり」と検出。全件OKという楽観バイアスは消えました<sup>※3</sup>。ただし、OKをOKと正しく判定する能力（過剰厳格化しないこと）も確認しています。</p>
+
+                <p>本実験は25項目。結果を正直に書きます。</p>
+
+                <p style="font-weight:700;color:#004d40;margin:20px 0 8px;">【表1：本実験の結果サマリ】</p>
+                <table>
+                    <tr><th>指標</th><th>数値</th><th>意味</th></tr>
+                    <tr><td>完全一致率</td><td><strong>32%</strong>（8/25）</td><td>人間と全く同じ4段階評価を返した割合</td></tr>
+                    <tr><td>方向一致率</td><td><strong>56%</strong>（14/25）</td><td>OK系 vs 不足系の2分類で一致した割合</td></tr>
+                    <tr><td>Cohen's κ</td><td><strong>0.217</strong></td><td>偶然の一致を除いた評価者間の合意度<sup>※5</sup></td></tr>
+                    <tr><td>ダミー分類器</td><td><strong>64%</strong></td><td>「全件OK」と答えるだけの最低ラインの正答率</td></tr>
+                    <tr><td>処理時間</td><td><strong>57分</strong>（25項目）</td><td>エラー0件で完走</td></tr>
+                    <tr><td>不一致の偏り</td><td>厳しい方向10件 / 見逃し1件</td><td>Gemmaは「拾いすぎる」傾向</td></tr>
+                </table>
+                <p><small><sup>※5</sup> κ（カッパ）は0が「偶然レベル」、1が「完全一致」。0.217は「わずかな一致」に分類されます。</small></p>
+
+                <p><strong>正直に言えば、この数字は「使える」と言い切れるものではありません。</strong> 方向一致率56%は、何も考えず全部OKと答えるダミー分類器の64%を下回っています<sup>※1</sup>。Cohen's κ=0.217は統計的に「わずかな一致」であり、「AIが判定しました」と胸を張れる水準ではない。</p>
+
+                <p>では、この実験は失敗だったのか？ 私はそうは思っていません。</p>
+
+                <h2>「配管は動いた。水質はこれから」</h2>
+
+                <p>この結果を、私は「<strong>配管は実証された。水質はこれから</strong>」と整理しています。</p>
+
+                <p>「配管」とは、データの流れの仕組みです。事業計画書を読み込んで、基準と突合して、4段階で評価して、JSON形式でレポートを出す。この一連の流れは、<strong>エラーゼロで25項目を57分で完走</strong>しました<sup>※3</sup>。人間なら半日かかる作業です。機密データは一文字も外に出ていない。この「配管」は確実に動いています。</p>
+
+                <p>「水質」とは、判定の精度です。ここはまだ人間に及ばない。ただし、2つの事実を補足します。</p>
+
+                <p><strong>1つ目：間違える方向が「厳しすぎる」側に偏っている。</strong> 不一致17件のうち、Gemmaが厳しすぎた（人間はOKだがGemmaは不足と判定）のが10件。逆に見逃した（人間は不足だがGemmaはOK）のは1件だけです<sup>※3</sup>。品質管理の文脈では、「見逃す」より「拾いすぎる」方が安全です。</p>
+
+                <p><strong>2つ目：精度を上げる余地が構造的に残っている。</strong> 今回のモデルは120億パラメータのGemma4です。2026年7月時点で、MITライセンスのオープンモデル（DeepSeek V4-Proなど）がSWE-bench Verifiedで80.6%を記録しています<sup>※6</sup>。「配管」はモデルを差し替えるだけで動くので、より大きなモデルで「水質」を引き上げる実験が次のステップです。</p>
+
+                <h2>中小企業で応用するなら</h2>
+
+                <p>「精度がまだ足りないなら、うちには関係ないのでは？」と思うかもしれません。でも、この方式の本質は<strong>全自動の代替ではなく、スクリーニング</strong>です。</p>
+
+                <p><strong>今の使い方</strong>：25項目を全部人間が見る（30分）<br>
+                <strong>ハイブリッド方式</strong>：AIが先にスクリーニング → 人間は「不足あり」と指摘された項目だけ精査</p>
+
+                <p>削減効果は現時点で最大28%と試算されています<sup>※1</sup>。劇的ではありませんが、案件が月に10件あれば年間で約30時間。中小企業の品質管理担当にとって、30時間は小さくない数字です。</p>
+
+                <p>そしてこの方式の最大の利点は、繰り返しになりますが<strong>企業の機密データが外部に一切出ない</strong>こと。「AIを使いたいけど、うちのデータを外に出すのは怖い」──中小企業の経営者にとって最大の心理的ハードルを、構造的にゼロにします。</p>
+
+                <p style="font-weight:700;color:#004d40;margin:20px 0 8px;">【表2：自社で始めるなら──松竹梅】</p>
+                <table>
+                    <tr><th>レベル</th><th>やること</th><th>投資の目安</th></tr>
+                    <tr><td><strong>松</strong>（しっかり版）</td><td>クラウドAIでルーブリック設計＋ローカルLLMで自動判定。品質チェック・監査・書類照合など定型業務を半自動化</td><td>月額数千円（クラウドAPI）＋PC（GPU搭載推奨）</td></tr>
+                    <tr><td><strong>竹</strong>（スタンダード版）</td><td>ChatGPTやClaudeに「このチェックリストの判定基準を作って」と頼み、出力をコピーして手元で照合。AIに直接データは渡さない</td><td>月額約3,000円（ChatGPT Plus等）</td></tr>
+                    <tr><td><strong>梅</strong>（最小版）</td><td>チェックリストの「判定基準」だけAIに言語化させる。実際のチェックは人間がやるが、基準が明文化されているので属人化が減る</td><td>無料プランでも可能</td></tr>
+                </table>
+
+                <p><strong>竹からで十分です。</strong> 大事なのは「何をOKとするか」を言語化すること。AIは文章を書くのが得意ですが、「OK/NGの境界線を言語化する」のも同じくらい得意です。この言語化自体が、品質管理の第一歩になります。</p>
+
+                <h2>おわりに ── 失敗を公開する理由</h2>
+
+                <p>この記事で一番伝えたかったのは、「ハイブリッドAIはすごい」ではありません。</p>
+
+                <p><strong>AIの実験は、数字を全部見せて初めて意味がある。</strong>「精度が上がりました」「効率化できました」だけでは、読んだ方が自社で試すときの判断材料になりません。κ=0.217という数字も、ダミー分類器に負けたという事実も、そのまま出すことで「じゃあうちの業務ではどのくらいなら使えるか」を考える土台になるはずです。</p>
+
+                <p>AIの世界では「大きなAIに全部任せればいい」という風潮が強くなっています。でも現場には、守秘義務、コスト、「お客様にどう説明するか」という制約がある。<strong>大きなAIに「考え方」を設計させ、小さなAIに「実行」させる</strong>──この役割分担は、品質管理に限らず多くの業務に応用できると考えています。</p>
+
+                <p>配管はできた。次は水質を上げる番です。</p>
+
+                <hr style="margin:32px 0">
+                <div style="font-size:13px;color:#666;line-height:1.8">
+                    <p><strong>出典・参考</strong></p>
+                    <p><sup>※1</sup> 自社実験データ：反証担当による独立評価（実施日 2026-07-18）。ダミー分類器64%・κ≈0.217・スクリーニング削減効果最大28%は検証スクリプトによる追試で確定</p>
+                    <p><sup>※2</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">Stop Choosing Between Local and Cloud LLMs: A Field Guide to Hybrid Patterns | Towards Data Science</a>（閲覧日 2026-07-19）</p>
+                    <p><sup>※3</sup> 自社実験データ（実施日 2026-07-17〜18）。パイロット3件→本実験25項目の全工程記録</p>
+                    <p><sup>※4</sup> <a href="https://towardsdatascience.com/stop-choosing-between-local-and-cloud-llms-a-field-guide-to-hybrid-patterns/">同上</a>。5つのハイブリッドパターン分類のうち「Plan-then-Ground」</p>
+                    <p><sup>※5</sup> Landis &amp; Koch (1977) "The Measurement of Observer Agreement for Categorical Data", Biometrics, 33(1), pp.159-174</p>
+                    <p><sup>※6</sup> <a href="https://augusto.digital/insights/blogs/monthly-llm-news-july-2026/">Monthly LLM News July 2026 - Augusto Digital</a>（閲覧日 2026-07-19）。DeepSeek V4-Pro SWE-bench Verified 80.6%</p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Related CTA -->
+        <div class="column-related-cta">
+            <h3>AIを活用した品質管理・業務効率化の導入支援を行っています</h3>
+            <p>「うちのデータを外に出さずにAIを使いたい」「チェック業務の負担を減らしたい」──そんなお悩みに、ハイブリッドAI構成の設計・導入支援でお応えします。リスキリング助成金対応のAI研修もご用意しています。</p>
+            <a href="../aieducation.html" class="btn btn-primary">AI講座の詳細を見る</a>
+        </div>
+
+        <!-- Prev/Next Nav -->
+        <nav class="column-nav-links">
+            <a href="013-ai-morning-meeting-28days.html" class="column-nav-prev">&larr; 前の記事: AIに朝礼をやらせたら、28日間で見えてきたこと</a>
+            <span></span>
+        </nav>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>お問い合わせはこちら</h2>
+                <p>AI/DX導入、研修のご相談など、お気軽にお問い合わせください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPKf3GPn054KURianq1jvmm_vFT-PbY3ZQhkLKMaCkxrXMQ/viewform?usp=publish-editor"
+                    class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 吉田中小企業診断士事務所. All Rights Reserved.</p>
+            <p><small>Powered by GitHub Pages & AI Technology</small></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
